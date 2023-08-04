@@ -343,7 +343,7 @@ function vary(){
   try {
     const response = await fetch('prompts.txt');
     const data = await response.text();
-    promptzList = data.trim().split('\n');
+    promptsList = data.trim().split('\n');
   } catch (error) {
     console.error('Error fetching items.txt:', error);
   }
