@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>IdeaIgniter</title>
+     <link rel="icon" type="image/png" href="iifavicon.png"/>
+    
+    <style>
+      body {
+        font-size: 22px;
+      }
+      
+      .checkbox-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      
+      .checkbox {
+        color: #FFFFFF;
+        background-color: #000000;
+        padding: 0.5rem;
+        margin: 0.5rem;
+      }
+
+      .button-container {
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+      }
+
+      .prompt {
+        background-color: #102010;
+        color: #ECE49C;
+        font-family: "Montserrat";
+        font-size: 2rem;
+        width: 900px;
+        height: 140px;
+        display: flex;
+        margin: 1rem;
+      }
+
+      .donation-button {
+        background-color: black;
+        color: #FFD700;
+        font-weight: bold;
+        padding: 8px 4px;
+        border-radius: 5px;
+        border: 1px solid #DC143C;
+        margin: 1rem 0 2rem 0;
+        font-size: 1rem;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+         align-items: center;
+        justify-content: center;
+        text-align: center;}
+
+    
+       .background-image {
+        background-image: url("bluebackground.jpg");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }     
+    </style>
+  </head>
+  <body>
+    <canvas id="vCanvas1" width="100" height="20" style="border:2px solid #f393d3"></canvas>
+    <canvas id="vCanvas2" width="100" height="20" style="border:2px solid #f393d3"></canvas>
+    <canvas id="vCanvas3" width="100" height="20" style="border:2px solid #f393d3"></canvas>
+    <canvas id="vCanvas4" width="100" height="20" style="border:2px solid #f393d3"></canvas>
+    <canvas id="vCanvas5" width="100" height="20" style="border:2px solid #f393d3"></canvas>
+    <br>
+    <canvas id="Canvas1" width="100" height="100" style="border:2px solid #d3d3d3"></canvas>
+    <canvas id="Canvas2" width="100" height="100" style="border:2px solid #d3d3d3"></canvas>
+    <canvas id="Canvas3" width="100" height="100" style="border:2px solid #d3d3d3"></canvas>
+    <canvas id="Canvas4" width="100" height="100" style="border:2px solid #d3d3d3"></canvas>
+    <canvas id="Canvas5" width="100" height="100" style="border:2px solid #d3d3d3"></canvas>
+    <br>
+ 
+    <textarea name="text" id="urltext" cols="80" rows="1"></textarea>
+    <br>
+    <br>
+   
+    <div class="checkbox-container">
+      <div class="checkbox">
+        <input type="checkbox" id="start_prompt">
+        <label for="start_prompt">Start Prompt</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="prompts">
+        <label for="prompts">Prompts</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="objects">
+        <label for="objects">Objects</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="animals">
+        <label for="animals">Animals</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="environment">
+        <label for="environment">Environment</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="heroes" name="heroes" value="heroes">
+        <label for="heroes">Hero List</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="animeCharacters" name="animeCharacters">
+        <label for="animeCharacters">Anime Character</label>  
+      </div>   
+      <div class="checkbox">
+        <input type="checkbox" id="anime" name="anime">
+        <label for="anime">Anime</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="actors" name="actors">
+        <label for="actors">Actor</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="movies" name="movies">
+        <label for="movies">Movie</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="comics" name="comics">
+        <label for="comics">Comic</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="comicStyles" name="comicStyles">
+        <label for="comicStyles">Comic Style</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="photo_effects">
+        <label for="photo_effects">Photo Effects</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="render_type">
+        <label for="render_type">Render Type</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="art_style">
+        <label for="art_style">Art Styles</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="quality_modifiers">
+        <label for="quality_modifiers">Quality Modifiers</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="artists">
+        <label for="artists">Artists</label>
+      </div>
+      
+      <div class="checkbox">
+        <input type="checkbox" id="colors">
+        <label for="colors">Colors</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="seed">
+        <label for="seed">Seed</label>
+     </div>
+       <div class="checkbox">
+        <input type="checkbox" id="chaos">
+        <label for="chaos">Chaos</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="Aspect Ratio">
+        <label for="Aspect Ratio">Aspect Ratio</label>
+        <select name="Aspect Ratio" id="asp">
+          <option value="1:1">1:1</option>
+          <option value="16:9">16:9</option>  
+          <option value="2:1">2:1</option>
+        </select>
+      </div>
+
+      <div class="checkbox">
+        <label for="abc">Size</label>
+          <select name="abc" id="qual">
+            <option value=".5">Small</option>
+            <option value="1">Medium</option>  
+            <option value="2">Large</option>
+          </select>
+      </div>
+      <div class="checkbox">
+        <label for="API">API</label>
+        <select name="api" id="api">
+          <option value="LEONARDO">LEONARDO</option> 
+
+        </select>
+      </div>
+
+      <div class="checkbox">
+        <label for="magic">Magic</label>
+        <select name="magic" id="mag">
+          <option value="false">false</option> 
+          <option value="true">true</option>
+        </select>
+      </div>
+      
+      
+      <div class="checkbox">
+        <label for="tile">Tiling</label>
+        <select name="tile" id="til">
+          <option value="false">false</option> 
+          <option value="true">true</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <div class="background-image"></div>
+      <div id="prompt" contenteditable="true" class="prompt"></div>
+        <div class="flex3">
+        <button id="generate-button">Generate</button>
+        <button id="copy-button">Copy</button>
+        <button id="url-button">Get Image</button>
+      </div>
+       <div class="checkbox">
+        <label for="img2">Img2Img</label>
+          <select name="img2" id="im2">
+            <option value="">None</option>
+            <option value="1">1</option>  
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+      </div>
+      
+      <div id="donation-button" class="donation-button">Donations</div>
+    </div>
+
+    
+  <script>
+    const generateButton = document.getElementById("generate-button");
+    const copyButton = document.getElementById("copy-button");
+    const urlButton = document.getElementById("url-button");
+    const promptDiv = document.getElementById("prompt");
+    generateButton.style.font = "4vw Montserrat"
+    copyButton.style.font = "4vw Montserrat"
+    urlButton.style.font = "4vw Montserrat"
+    var promp="",retURL="",retURL2="",retURL3="",retURL4="",retURL5=""
+    var retId1="",retId2="",retId3="",retId4=""
+    var c1 = document.getElementById("Canvas1")
+    var ct1 = c1.getContext("2d")
+    var c2 = document.getElementById("Canvas2")
+    var ct2 = c2.getContext("2d")
+    var c3 = document.getElementById("Canvas3")
+    var ct3 = c3.getContext("2d")
+    var c4 = document.getElementById("Canvas4")
+    var ct4 = c4.getContext("2d")
+    var c5 = document.getElementById("Canvas5")
+    var ct5 = c5.getContext("2d")
+    var vc1 = document.getElementById("vCanvas1")
+    var vct1 = vc1.getContext("2d")
+    var vc2 = document.getElementById("vCanvas2")
+    var vct2 = vc2.getContext("2d")
+    var vc3 = document.getElementById("vCanvas3")
+    var vct3 = vc3.getContext("2d")
+    var vc4 = document.getElementById("vCanvas4")
+    var vct4 = vc4.getContext("2d")
+    var vc5 = document.getElementById("vCanvas5")
+    var vct5 = vc5.getContext("2d")
+    var img =new Image()
+    var img2 =new Image()
+    var img3 =new Image()
+    var img4 =new Image()
+    var img5 =new Image()
+    var img2img
+    var leoTime=0,leoWait, leoCredits, leoCredMax
+    var varyStr="Upscale"
+    
+   var magicSet=false
+    
+    img.onload = function(){ct1.drawImage(img, 0, 0,size,size)}
+    img2.onload = function(){ct2.drawImage(img2, 0, 0,size,size)}
+    img3.onload = function(){ct3.drawImage(img3, 0, 0,size,size)}
+    img4.onload = function(){ct4.drawImage(img4, 0, 0,size,size)}
+    img5.onload = function(){ct5.drawImage(img5, 0, 0,size-10,size-10)}
+    img.src="ii.png"
+    
+    var dims,leo
+  //  var leoKeyA=document.cookie.split(';')    
+  //  var leoApiKey=leoKeyA[0].slice(2)
+    
+    var leoApiK=['1065bc65','ae93','4179','aebd','552e3fc9734b']
+    var leoApiKey=leoApiK.join('-')
+    
+    var screenw=window.innerWidth, screenh=window.innerHeight
+    var size=Math.floor(.184*screenw)
+    var upsize=Math.floor(.054*screenh)
+    c1.width=size; c1.height=size
+    c2.width=size; c2.height=size
+    c3.width=size; c3.height=size
+    c4.width=size; c4.height=size
+    c5.width=size-10; c5.height=size-10
+    vc1.width=size; vc1.height=upsize
+    vc2.width=size; vc2.height=upsize
+    vc3.width=size; vc3.height=upsize
+    vc4.width=size; vc4.height=upsize
+    vc5.width=size-10; vc5.height=upsize
+    vct5.font="32px Arial"
+    vct5.fillStyle="yellow"
+    vct5.fillText('ApiKey',2,Math.floor(.5*upsize))
+    vct5.fillText('****-****',2,Math.floor(.9*upsize))
+function vary(){ 
+    vct1.font="32px Arial"
+    vct1.fillStyle="yellow"
+    vct2.font="32px Arial"
+    vct2.fillStyle="yellow"
+    vct3.font="32px Arial"
+    vct3.fillStyle="yellow"
+    vct4.font="32px Arial"
+    vct4.fillStyle="yellow"
+    vct1.clearRect(0,0,size,50)
+    vct2.clearRect(0,0,size,50)
+    vct3.clearRect(0,0,size,50)
+    vct4.clearRect(0,0,size,50)
+    
+    vct1.fillText(varyStr,20,Math.floor(.8*upsize) )
+    vct2.fillText(varyStr,20,Math.floor(.8*upsize) )
+    vct3.fillText(varyStr,20,Math.floor(.8*upsize) )
+    vct4.fillText(varyStr,20,Math.floor(.8*upsize) )
+}   
+    
+    ct1.fillStyle="yellow"
+    var waiting=new Image()
+    waiting.src="wait2.jpg"
+    var urlElem=document.getElementById('urltext')
+    urlElem.value="Select&Generate->Copy or GetImage"
+
+    const startPromptList = ["/Imagine Prompt:"];
+    const promptsList = ["Coffee shop morning",
+"Beach sunset landscape","Mountains and fog",
+"City skyline at night","Rainy city street",
+"Autumn leaves in park","Snowy forest trail",
+"Ocean waves crashing","Field of wildflowers",
+"Waterfall in jungle","Golden hour on farm",
+"Desert sand dunes","Painted desert sunset",
+"Rainbow over city","Cherry blossoms in bloom",
+"Eiffel Tower at dusk","Great Wall of China",
+"Taj Mahal in sunrise","Maui beach huts","Santorini white houses",
+"Vineyard at sunset","Cable cars in San Francisco",
+"Statue of Liberty","Grand Canyon view",
+"Niagara Falls mist","Yellowstone geysers",
+"Zion National Park","Mount Rushmore",
+"Rocky Mountains","Mount Everest view",
+"Alaska Northern Lights","Australian Outback",
+"African safari sunset","Amazon rainforest",
+"Arctic tundra","Antarctica ice shelves",
+"Baltic Sea coastline","Black Sea beaches",
+"Caspian Sea sunset","Mediterranean Sea view",
+"Caribbean island paradise","Fjords in Norway",
+"Galapagos Islands","Greek island sunset",
+"Hawaiian volcanic lava","Irish countryside",
+"Italian countryside","Japanese cherry blossoms",
+"Korean autumn leaves","Maldives tropical island",
+"Mexican beach sunset","Moroccan desert sand",
+"Nepalese Himalayas","New Zealand glaciers",
+"Peruvian Machu Picchu","Polish countryside",
+"Russian winter landscape","Scottish highlands",
+"Serengeti grasslands","Thai beach huts",
+"Tibetan plateau","Vietnamese rice paddies",
+"Welsh countryside","Yosemite National Park",
+"Zambian waterfall","Abandoned factory",
+"Art museum interior","Balloon ride over city",
+"Botanical garden","Bridge at sunset",
+"Cathedral interior","Carnival ride",
+"Castle at night","Christmas market",
+"Concert stage","Construction site",
+"Coral reef","Cultural festival",
+"Dolphin show","Farmers market",
+"Fireworks display","Fishing village",
+"Flower garden","Food truck festival",
+"Football stadium","Fountain in park",
+"Garden maze","Gondola ride",
+"Graffiti street art","Halloween pumpkin patch",
+"Haunted house","Ice skating rink",
+"Indoor skydiving","Library interior",
+"Lighthouse at night","Luxury hotel room",
+"Marina boats","Military parade",
+"Mountain biking trail","Music festival crowd",
+"Oceanfront resort","Outdoor concert",
+"Outdoor swimming pool","Palace interior",
+"Paddle boat on lake","Paddle boarding",
+"Paintball field","Parkour gym",
+"Petting zoo","Picnic in park","Serene forest waterfall",
+"Sunrise over the city skyline","Golden hour beach landscape",
+"Rustic cabin in the woods","Majestic mountains and valleys",
+"Riverside picnic with friends","Colorful hot air balloons",
+"Icebergs in arctic ocean","Garden of sculptures",
+"Rainy day city streets","Cherry blossom tree tunnel",
+"Historic castle ruins","Rainbow over waterfall",
+"Autumn leaves in the park","Crowded street market",
+"Foggy forest trail","Gorgeous sunset over the lake",
+"Suburban neighborhood at night","Vibrant fall foliage",
+"Waterfall in the jungle","Boat on the river at sunset",
+"Crowded city intersection","Desert sunset landscape",
+"Eiffel tower at night","Farmland at sunset",
+"Fireworks over the city","Golden hour on the beach",
+"Green forest canopy","Island paradise with palm trees",
+"Lonely tree in the field","Mountain peak with clouds",
+"Ocean sunset with palm trees","Riverside park with ducks",
+"Snowy mountain peak","Thunderstorm over the city",
+"Tropical island with palm trees","Vast desert landscape",
+"Vineyard at sunset","Winter forest with snow",
+"Abandoned building with graffiti","Art museum with sculptures",
+"Beachside amusement park","Botanical garden with flowers",
+"Cityscape with reflections","Cathedral with stained glass",
+"Carnival with colorful lights","Castle with moat and drawbridge",
+"Christmas market with vendors","Concert stage with lights",
+"Construction site with cranes","Coral reef with colorful fish",
+"Cultural festival with dancers",
+"Dolphin show with trainers","Farmers market with produce",
+"Fireworks display over the water","Fishing village with boats",
+"Flower garden with pathways","Food truck festival with vendors",
+"Football stadium with players","Fountain in the park with children",
+"Garden maze with hedges","Gondola ride on the canal",
+"Graffiti street art in the city","Halloween pumpkin patch with pumpkins",
+"Haunted house with ghosts","Ice skating rink with skaters",
+"Indoor skydiving with instructors","Library with bookshelves",
+"Lighthouse on the coast",
+"Luxury hotel room with balcony","Marina with boats and yachts",
+"Military parade with soldiers",
+"Mountain biking trail with bikers","Vibrant red tulip field in the springtime",
+"Lush green rainforest with a hidden waterfall",
+"Abandoned medieval castle with ivy covering the walls",
+"Underwater coral reef teeming with colorful fish",
+"Snowy alpine village with traditional chalets",
+"Riverside village with traditional stilt houses",
+"Rugged rocky coastline with crashing waves",
+"Golden hour desert landscape with sand dunes",
+"Serene Zen garden with bamboo and stone paths",
+"Vast savannah grasslands with wild animals",
+"Tropical island beach with crystal clear water",
+"Rustic mountain cabin with a crackling fire",
+"Majestic mountain peak with a snowy summit",
+"Eerie abandoned ghost town with crumbling buildings",
+"Gorgeous waterfall hidden deep in the jungle",
+"Vibrant street art mural in an urban alleyway",
+"Crowded street market with vendors selling spices",
+"Colorful hot air balloons soaring in the sky",
+"Rustic farmhouse nestled in the countryside",
+"Garden of sculptures with intricate metalwork",
+"Rainy day city streets with reflections in the puddles",
+"Cherry blossom tree tunnel with petals falling",
+"Historic castle ruins surrounded by greenery",
+"Rainbow over waterfall with mist in the air",
+"Autumn leaves in the park with a pond",
+"Crowded street market with vendors selling fruits",
+"Foggy forest trail with moss covered trees",
+"Gorgeous sunset over the lake with a dock",
+"Suburban neighborhood at night with streetlights",
+"Vibrant fall foliage with a wooden bridge",
+"Waterfall in the jungle with a rainbow",
+"Boat on the river at sunset with reflections",
+"Crowded city intersection with honking cars",
+"Desert sunset landscape with a cactus",
+"Eiffel tower at night with sparkling lights",
+"Farmland at sunset with a haystack",
+"Fireworks over the city with a skyline",
+"Golden hour on the beach with palm trees",
+"Green forest canopy with a misty trail",
+"Island paradise with palm trees and crystal clear water",
+"Lonely tree in the field with a sunset",
+"Planetarium show","Create a photograph of a city skyline at sunset",
+"Take a picture of a flower field with a bee pollinating",
+"Capture an image of a waterfall in the middle of a dense forest",
+"Shoot a portrait of a person with a meaningful tattoo",
+"Take a photo of a child playing with a balloon on a beach",
+"Create a photograph of a hot air balloon flying at dawn",
+"Capture an image of a snow-covered mountain range",
+"Shoot a portrait of a chef cooking in a kitchen",
+"Take a photo of a dog playing in a field of sunflowers",
+"Create a photograph of a pair of lovers sitting on a park bench",
+"Capture an image of a lighthouse on a rocky shoreline",
+"Shoot a portrait of a musician playing an instrument",
+"Take a photo of a couple dancing in the rain",
+"Create a photograph of a hot air balloon flying at dusk",
+"Capture an image of a sunset over a calm lake",
+"Shoot a portrait of an artist painting in a studio",
+"Take a photo of a group of friends having a picnic in a meadow",
+"Create a photograph of a group of children playing in a playground",
+"Capture an image of a full moon behind a silhouette of a tree",
+"Shoot a portrait of a person reading a book in a cozy armchair",
+"Take a photo of a couple holding hands in front of a Christmas tree",
+"Create a photograph of a snow-covered village in the mountains","Human-insect hybrid creatures as pets", "Virtual pets in augmented reality", "Telepathic communication technology", "Human-plant hybrid organisms", "Gravity manipulation technology", "Artificial black holes for energy production", "Quantum computing for advanced artificial intelligence", "Hyperspace travel for interstellar travel", "Human-animal hybrid soldiers", "Brain implants for enhanced memory and learning", "Telekinesis technology for manipulation of objects", "Super soldier serum for enhanced human abilities", "Artificial wormholes for transportation", "Neural network technology for advanced decision-making", "Human-machine hybrid organisms", "Advanced mind control technology", "Nanobot technology for healing and repair", "Human-computer hybrid entities", "Human-robot hybrid avatars", "Teleportation of living organisms", "Human-element hybrid organisms", "Advanced time travel technology", "Human-energy hybrid beings", "Human-artificial intelligence hybrid entities",
+ "Virtual reality theme parks", "Underground cities for overpopulation", "3D printing of organs for transplants", "Self-driving cars for transportation", "Drones for package delivery", "Artificial intelligence personal shopping assistants", "Virtual interior designers", "Smart homes with voice control", "Online virtual therapy sessions", "Virtual personal trainers", "Virtual tours of historical sites", "Virtual reality escape rooms", "Virtual reality museum exhibits", "Virtual reality language classes", "Virtual reality job interviews", "Virtual reality sports training", "Virtual reality travel experiences", "Virtual reality shopping malls", "Virtual reality music festivals", "Virtual reality cooking classes", "Virtual reality art galleries", "Virtual reality education programs", "Virtual reality meditation sessions", "Virtual reality exercise classes", "Virtual reality fashion shows", "Virtual reality news broadcasts", "Virtual reality theme parks", "Virtual reality historical reenactments", "Virtual reality haunted houses", "Virtual reality live performances", "Virtual reality concerts", "Virtual reality amusement parks", "Virtual reality sports events", "Virtual reality film screenings", "Virtual reality book clubs", "Virtual reality cooking classes",
+ "Virtual reality journey through the underworld", "3D recreation of Atlantis", "Interactive tour of the Seven Wonders of the Ancient World", "Virtual reality exploration of the Garden of Eden", "Visit the City of the Sun", "Virtual reality walk through the Amazon rainforest", "Virtual reality simulation of the lost city of El Dorado", "Interactive tour of the ancient city of Troy", "Virtual reality experience of the lost city of Pompeii", "Virtual reality journey to the top of Mount Olympus", "Virtual reality exploration of the Norse gods' Asgard", "Virtual reality tour of the Egyptian pyramids", "Virtual reality exploration of the lost city of Machu Picchu", "Virtual reality visit to the ancient city of Rome", "Virtual reality tour of the Hanging Gardens of Babylon", "Virtual reality journey to the ancient city of Petra", "Virtual reality exploration of the lost city of Atlantis", "Virtual reality visit to the ancient city of Athens", "Virtual reality tour of the ancient city of Jerusalem", "Virtual reality journey to the ancient city of Thebes", "Virtual reality exploration of the ancient city of Carthage", "Virtual reality visit to the ancient city of Alexandria", "Virtual reality tour of the ancient city of Babylon", "Virtual reality journey to the ancient city of Ur", "Virtual reality exploration of the ancient city of Jerusalem", "Virtual reality visit to the ancient city of Sumer", "Virtual reality tour of the ancient city of Akkad", "Virtual reality journey to the ancient city of Ebla", "Virtual reality exploration of the ancient city of Ugarit", "Virtual reality visit to the ancient city of Harran", "Virtual reality tour of the ancient city of Urkesh",          
+"Capture an image of a rainbow over a waterfall",
+"Shoot a portrait of a person laughing with friends at a party",
+"Take a photo of a baby sleeping peacefully in a crib",
+"Create a photograph of a hot air balloon flying at night",
+"Capture an image of a rainbow over a cityscape",
+"Shoot a portrait of a person hugging a loved one",
+"Take a photo of a couple holding hands on a bridge",
+"Create a photograph of a group of kids playing in the ocean",
+"Capture an image of a couple walking on a beach at sunset",
+"Shoot a portrait of a person sitting in a field of wildflowers",
+"Take a photo of a couple watching the sunset on a hilltop",
+"Create a photograph of a hot air balloon flying over a city",
+"Capture an image of a rainbow over a forest",
+"Shoot a portrait of a person sitting in front of a fireplace",
+"Take a photo of a couple sitting on a dock by the lake",
+"Create a photograph of a hot air balloon flying over a countryside",
+"Capture an image of a rainbow over a mountain range",
+"Shoot a portrait of a person sitting on a porch swing",
+"Take a photo of a couple dancing in a field of flowers","A group of friends discover a mysterious old board game",
+"A detective races against time to solve a string of murders",
+"A young prince must reclaim his rightful throne from an evil sorcerer",
+"A brave knight sets out on a quest to defeat a powerful dragon",
+"A team of astronauts journey to a distant planet in search of alien life",
+"A scientist creates a machine that can predict the future",
+"A group of survivors must navigate a post-apocalyptic world",
+"A high school student discovers they have superpowers",
+"A young orphan discovers they are the heir to a powerful kingdom",
+"A group of friends stumble upon a haunted house and decide to investigate",
+"A group of students uncover a conspiracy at their prestigious academy",
+"A soldier must fight to survive after being stranded behind enemy lines",
+"A group of friends get lost in the woods and uncover a dark secret",
+"A detective must solve a string of murders committed by a copycat killer",
+"A group of strangers are stranded on a deserted island after a plane crash",
+"A young girl embarks on a journey to save her village from an ancient curse",
+"A group of scientists must stop a rogue AI from destroying the world",
+"A group of explorers discover a lost city hidden deep in the jungle",
+"A young boy must save his parents from an evil organization",
+"A group of friends uncover a secret government experiment gone wrong",
+"A detective must solve a series of murders that seem to be connected to a local legend",
+"A group of survivors must fight to survive in a world overrun by zombies",
+"A young girl discovers she is a witch and must attend a school of magic",
+"A group of friends must stop a madman from destroying the city",
+"A young boy discovers he is a prince and must take his rightful place as king",
+"A group of scientists must prevent a massive asteroid from destroying Earth",
+"A detective must solve a string of murders at a local carnival",
+"A group of friends must survive a night in a haunted hotel",
+"A young girl discovers she is the chosen one to defeat an ancient evil",
+"A group of astronauts must save the world from a rogue black hole",
+"A detective must solve a series of murders that seem to be connected to a famous author",
+"A young boy discovers a secret portal to a magical land",
+"A group of friends must stop a terrorist organization from blowing up the city",
+"A young girl must save her village from an invasion of giant robots",
+"A group of scientists must prevent a deadly virus from spreading",
+"A detective must solve a string of murders that seem to be connected to a local legend",
+"A group of survivors must fight to survive in a world overrun by mutants",
+"A young girl discovers she is a mermaid and must save her underwater kingdom",
+"A group of friends must stop a madman from starting World War III",
+"A young boy must save his sister from a kidnapper",
+"A group of scientists must prevent a massive solar flare from destroying Earth",
+"A detective must solve a series of murders that seem to be connected to a local cult",
+"A group of friends must survive a night in a haunted hospital",
+"A young girl must save her village from an invasion of giant monsters","A group of astronauts stranded on a deserted planet",
+"A detective solving a murder case in a small town",
+"A robot gaining consciousness and struggling with its identity",
+"A group of survivors in a post-apocalyptic world",
+"A dragon hoarding treasure in a cave",
+"A group of teens discovering they have supernatural powers",
+"A witch trying to reclaim her powers after they were taken away",
+"A group of friends going on a road trip to find a legendary treasure",
+"A ghost haunting a house and seeking vengeance",
+"A giant monster attacking a city",
+"A vampire trying to survive in a world where vampires are hunted",
+"A scientist experimenting with time travel",
+"A group of pirates searching for a legendary treasure",
+"A robot uprising against humanity",
+"A group of survivors on a deserted island","Futuristic city skyline with flying cars and neon lights","Spaceship docking at a space station with a view of Earth","Robotic factory assembling advanced androids","Alien planet with strange flora and fauna","Cyborg soldiers in advanced armor on a battlefield","Interstellar wormhole travel through space-time","Virtual reality simulation with advanced technology","Artificial intelligence controlling a city's infrastructure","Humanity colonizing Mars with advanced habitats","Technologically advanced underwater cities","Alien invasion on Earth with advanced weaponry","Post-apocalyptic world with advanced mutants","Futuristic transportation with high-speed trains","Advanced medical technology saving lives","Space exploration with advanced spacecrafts","Intergalactic war with advanced weaponry","Humanity living in a virtual reality utopia","High-tech cyberpunk city with neon lights","Human-like robots living among society","Advanced energy sources powering the world","Augmented reality enhancing daily life","Futuristic theme park with advanced attractions","Teleportation technology revolutionizing transportation","Alien contact with advanced communication","Cyborg enhancements enhancing human abilities","Artificial intelligence taking over human jobs","Humanity living in space colonies","Advanced weather control technology","Virtual reality gaming with advanced graphics","Humanity merging with technology","Advanced genetic engineering creating new life forms","Robotic assistants in every household","Humanity living on floating cities","Futuristic sports with advanced equipment","Advanced nanotechnology revolutionizing industry","Humanity living on terraformed planets","Advanced artificial intelligence controlling drones","Futuristic military with advanced exoskeletons",
+"A group of friends accidentally summoning a demon","A day in the life of a city street performer", "The secret world of underground speakeasies", "The impact of technology on human connection", "The rise and fall of a fashion empire", "The mysterious disappearance of a famous artist", "A group of friends on a road trip to nowhere", "The dark side of social media fame", "A ghost town and its secrets", "The aftermath of a nuclear disaster", "The search for the ultimate comfort food", "The world of competitive video gaming", "A day in the life of a zoo keeper", "The story of a forbidden romance", "The impact of a natural disaster on a small community", "The art of tattooing and self-expression", "The journey of a refugee seeking asylum", "The world of competitive ice skating", "The struggles of a small business owner", "The history of a legendary rock band", "The world of professional wrestling", "The world of competitive eating", "The rise and fall of a political dynasty", "The story of a serial killer and their victims", "The impact of a new transportation system on a city", "The world of professional bull riding", "The history of a notorious outlaw", "The impact of a new technology on the workforce", "The life of a modern day ninja", "The world of professional skateboarding", "The struggles of a single parent", "The impact of a new religion on society", "The world of competitive gymnastics", "The history of a famous landmark", "The impact of a new medical breakthrough on society", "The world of professional motocross", "The story of a missing person and their loved ones", "The impact of a new energy source on the environment", "The world of competitive figure skating", "The struggles of a struggling musician", "The impact of a new communication system on society", "The world of professional snowboarding", "The history of a famous pirate","A day in the life of a traffic light", "The journey of a single raindrop", "The secret life of houseplants", "The story of a forgotten toy", "A day in the life of a city park bench", "The adventures of a delivery truck", "The history of an old, abandoned building", "The life of a stray cat", "The perspective of a blade of grass", "The tale of a lost key", "The story of a single, falling leaf", "A day in the life of a coin", "The journey of a falling star", "The secret world of mushrooms", "The tale of a forgotten memory", "A day in the life of a single ant", "The adventures of a lost balloon", "The history of a tree", "The life of a feather", "The perspective of a drop of dew", "The tale of a broken vase", "The story of a discarded bottle"];
+  const objectsList = ["shield", "sword", "armor", "helmet", "ring", "amulet", "belt", "boots", "gloves", "cloak", 
+    "dagger", "wand", "staff", "book", "quiver", "arrows", "bow", "crossbow", "spear", "axe", 
+    "hammer", "mace", "flail", "polearm", "shield", "buckler", "kite shield", "tower shield", 
+    "robe", "gauntlets", "greaves", "bracers", "pauldron", "girdle", "tabard", "medallion", 
+    "necklace", "charm", "talisman", "ornament", "trinket", "bauble", "gemstone", "jewel", 
+    "crown", "tiara", "diadem", "scepter", "cane", "orb", "icon", "statue", "figurine", 
+    "doll", "mask", "banner", "standard", "ensign", "flag", "pennant", "burgee", "ensign", 
+    "totem", "idol", "fetish", "relic", "artifact", "curio", "memento", "souvenir", "keepsake", 
+    "heirloom", "antique", "relic", "trifle", "gimcrack", "bauble", "knickknack", "tchotchke", 
+    "oddity", "curiosity", "rarity", "unique"];
+  const animalsList = ["Dragon", "Unicorn","snake", "turtle", "dolphin", "giraffe", "elephant" ,"bee", "wasp" ,"hydra", "chimera", "fairy" ,"wendigo", "new jersey devil", "octopus" ,"squid" ,"tucan", "elephant", "whale" ,"orca whale" ,"shark",
+    "tyranosauraus rex", "cat", "dog", "beagle", "rotwiller", "horse", "thoroughbred", "chicken", "duck", "muscovy duck" ,"cod", "salmon",
+    "blue whale", "humpback whale", "whale shark", "armamadillo", "bullet ant", "human", "ghoul", "zombie", "creeper", "ender man", "steve", "johnny depp",
+    "margot robbie", "bill nye the science guy", "pickerell", "bass" ,"steelhead" ,"pig" ,"micro pig", "ant", "catapillar", "pokemon", "pikachu", "charizard",
+    "squirtle", "mastodon" ,"mosasaurus" ,"loch ness monster"];
+  const environmentList = ["desert" , "jungle", "rainforest", "tundra", "mountain range", "coastline", "island", "marsh", "swamp", "cave", "volcano", "valley", "grassland", "lake", "river", "waterfall", "ocean", "beach", "coral reef", "glacier", "arctic", "oasis", "temperate forest", "tropical forest", "savannah", "alpine", "urban", "suburban", "rural", "industrial", "temple", "castle", "ruins", "graveyard", "lighthouse", "dock", "port", "harbor", "wharf", "shipyard", "oil rig"];
+  const photoEffectsList = ["cross process", "polaroid", "film grain", "dramatic tone", "matte", "sunburst", "lomo", "fisheye", "vintage", "film noir",
+    "crosshatch", "daguerreotype", "kodachrome", "vintage warm", "vintage cool", "hazy", "lithprint", "crossprocess cool", "crossprocess warm", "infrared",  "bleach bypass", "split toning", "film stock", "light leak", "film burn", "grunge", "noise", "cinematic", "glitch", "hdr",
+    "tilt shift", "miniature", "bokeh", "panorama", "lens flare", "chromatic aberration", "vintage fade", "film grain", "film scratch", "film dust",
+    "film grain 2", "film grain 3", "film grain 4", "film grain 5", "film grain 6", "film grain 7", "film grain 8", "film grain 9", "film grain 10","black and white", "sepia", "vintage", "saturated", "grunge", "cross-processed", "matte", "high contrast", "film noir", "faded", "glow", "hazy", "lomo", "polaroid", "tilt-shift", "vignette", "cross-processed", "surreal", "glitch", "distorted", "dreamy", "grainy", "noisy", "hdr", "sharp"];
+  const qualityModifiersList = ["Hyper-detailed", "High-resolution", "Crisp", "Vibrant", "High-dynamic range", "Low-light", "Long-exposure", "High-speed", "Wide-angle", "Telephoto", "Macro", "Panoramic", "Bokeh", "Shallow depth of field", "High-ISO", "Low-ISO", "Film-like", "Analog", "Matte", "Glossy", "Natural", "Artificial", "HDR", "LDR", "Infrared", "Ultraviolet", "Night", "Day", "Sunset", "Sunrise", "Blue hour", "Golden hour", "Silhouette", "Time-lapse", "Stop-motion", "Freeze-frame", "Slow-shutter", "Fast-shutter", "Action", "Portrait", "Landscape", "Street", "Documentary", "Event", "Wedding", "Nature", "Sports", "Wildlife", "Astronomy", "Abstract"];
+  const renderTypeList = ["Refraction", "Mirror", "Distortion", "Warp", "Reflection", "Kaleidoscope", "Inversion", "Pixelation", "Fragmentation", "Spiral", "Twirl", "Zoom", "Puzzle", "Perspective", "Optical", "Ripple", "Wave", "Flow", "Blur", "Double Vision", "Flicker", "Strobe", "Glitch", "Scanlines", "Noise", "Static", "TV", "Radial", "Swirl", "Mosaic", "Crop", "Slice", "Dice", "Cutout", "Crop", "Chop", "Fracture", "Shatter", "Explode", "Impact", "Collapse", "Disintegration", "Eclipse", "Shadow", "Silhouette", "Outline", "Glow", "Flare", "Light", "Luminance", "Radiance", "Glimmer", "Sparkle", "Flicker", "Twinkle", "Shimmer", "Reflection", "Rainbow", "Prism", "Rain", "Drops", "Mist", "Fog", "Smoke", "Haze", "Blur", "Fuzz", "Pixel", "Block", "Melt", "Drip", "Run", "Trickle", "Saturate", "Tint", "Hue", "Tonal", "Monochrome", "Duotone", "Gradient", "Ombre", "Blend", "Merge", "Fuse", "Mingle", "Mix", "Combine", "Overlay", "Layer", "Stack", "Collage", "Assemble", "Construct", "Build","            pencil", "charcoal", "pastel", "marker", "colored pencil", "collage", "gouache", "digital art", "neon", "glow",
+    "halftone", "crosshatch", "stipple", "pointillism", "engraving", "woodcut", "etching", "lithograph", "screen print", "letterpress",
+    "giclee", "pigment print", "dye sublimation", "archival print", "giclée print", "posterization", "halftone pattern", "crosshatch pattern", "stipple pattern", "pointillism pattern",
+    "engraving pattern", "woodcut pattern", "etching pattern","3D", "2D", "vector", "raster", "pixel art", "isometric", "orthographic", "textured", "shaded", "shadowed", "reflected", "transparent", "glossy", "matte", "bumpy", "smooth", "fractal", "procedural", "particle", "fluid", "volumetric", "non-photorealistic", "photo-realistic"];
+  const artStyleList = ["Abstract", "Baroque", "Gothic", "Renaissance", "Romanticism", "Realism", "Impressionism", "Post-Impressionism", "Expressionism", "Surrealism", "Cubism", "Fauvism", "Art Nouveau", "Art Deco", "Pop Art", "Minimalism", "Op Art", "Conceptual Art", "Installation Art", "Performance Art", "Land Art", "Urban Art", "Graffiti Art", "Street Art", "Contemporary Art", "Political Art", "Social Justice Art", "Feminist Art", "Queer Art", "Environmental Art", "Animal Art", "Portrait Art", "Still Life Art", "Landscape Art", "Seascape Art", "Cityscape Art", "Architecture Art", "Industrial Art", "Sci-Fi Art", "Fantasy Art", "Mythical Art", "Magical Realism Art", "Spiritual Art", "Religious Art", "Atheist Art", "Agnostic Art", "Humanist Art", "Secular Art", "Atheist Symbolism", "Agnostic Symbolism", "Humanist Symbolism", "Secular Symbolism", "Existential Art", "Nihilist Art", "Transcendental Art", "Metaphysical Art", "abstract", "realistic", "impressionistic", "expressionistic", "surrealistic", "minimalistic", "cubist", "futuristic", "gothic", "renaissance", "baroque", "rococo", "art nouveau", "art deco", "pop art", "op art", "graffiti", "street art", "comic book", "animation", "manga", "anime",
+    "crisp", "Vibrant", "High-dynamic range", "Low-light", "Long-exposure", "High-speed", "Wide-angle", "Telephoto", "Macro", "Panoramic", "Bokeh", "Shallow depth of field", "High-ISO", "Low-ISO", "Film-like", "Analog", "Matte", "Glossy", "Natural", "Artificial", "HDR", "LDR", "Infrared", "Ultraviolet", "Night", "Day", "Sunset", "Sunrise", "Blue hour", "Golden hour", "Silhouette", "Time-lapse", "Stop-motion", "Freeze-frame", "Slow-shutter", "Fast-shutter", "Action", "Portrait", "Landscape", "Street", "Documentary", "Event", "Wedding", "Nature", "Sports", "Wildlife", "Astronomy", "Abstract"];
+  const artistsList = ["Pablo Picasso", "Vincent van Gogh", "Leonardo da Vinci", "Michelangelo", "Claude Monet", "Rembrandt", "Salvador Dalí", "Frida Kahlo", "Raphael", "Gustav Klimt", "Edvard Munch", "Henri Matisse", "Johannes Vermeer", "Albrecht Dürer", "Jan van Eyck", "Paul Cézanne", "Georges Seurat", "Georges Braque", "Amedeo Modigliani", "Marc Chagall", "Egon Schiele", "Paul Gauguin", "Edgar Degas", "Sandro Botticelli", "Titian", "Diego Rivera", "Henri de Toulouse-Lautrec", "Gustav Eiffel", "John Singer Sargent", "El Greco", "Jacob van Ruisdael", "Tintoretto", "Canaletto", "Jan Steen", "Caravaggio", "Gustave Courbet", "Eugene Delacroix", "Jean-Auguste-Dominique Ingres", "Frans Hals", "Johannes Vermeer", "James McNeill Whistler", "John Everett Millais", "Thomas Gainsborough", "Sir Joshua Reynolds", "William Turner", "John Singer Sargent", "Thomas Eakins"];
+  const abcList = ["0.25", "0.5", "1", "2", "5"];
+  const colorsList = ["Electric Lavender","Aquamarine", "Crimson", "Deep Pink", "Lime Green", "Midnight Blue", "Orange Red", "Pale Goldenrod", "Peru", "Plum", "Slate Blue", "Turquoise", "Violet", "Dark Salmon", "Dark Sea Green", "Gold", "Gray", "Hot Pink", "Indian Red", "Khaki", "Light Coral", "Lawn Green", "Lemon Chiffon", "Light Cyan", "Light Goldenrod", "Light Gray", "Light Green", "Light Pink", "Light Salmon", "Light Sky Blue", "Light Yellow", "Lime", "Linen", "Magenta", "Maroon", "Medium Aquamarine", "Medium Blue", "Medium Orchid", "Medium Purple", "Medium Sea Green", "Medium Slate Blue", "Medium Spring Green", "Medium Turquoise", "Medium Violet Red", "Mint Cream", "Misty Rose", "Moccasin", "Navajo White", "Old Lace", "Olive", "Olive Drab", "Orange", "Orchid", "Pale Violet Red", "Papaya Whip", "Peach Puff", "Peru", "Pink", "Plum", "Powder Blue", "Rosy Brown", "Royal Blue", "Saddle Brown", "Salmon", "Sandy Brown", "Sea Green", "Seashell", "Sienna", "Silver", "Sky Blue", "Slate Gray", "Snow", "Spring Green", "Steel Blue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "White Smoke", "Yellow", "Yellow Green",  "Mystic Maroon","#3B", "#4D9F", "#0E", "#1F2", "#A8C7", "#0F6",
+  "#04C", "#00B", "#9E3", "#7D2", "#AF1C", "#01B", "#02F", "#1C9", "#03E8", "#05A", "#C1F", "#6D9", "#9A2", "#8F3", "#7C5", "#F2A", "#E1C", "#D0F", "#C01", "#B12", "#A23", "#934", "#845", "#756",
+  "Midnight Moss", "Celestial Blue", "Ethereal Lavender", "Nebula Pink", "Vortex Green", "Cosmic Orange", "Galactic Gold", "Solar Yellow", "Lunar Silver", "Stellar White", "Rainbow Sherbert", "Aurora borealis", "Mystical Turquoise", "Rainforest Green", "Firecracker Red", "Serendipity Pink", "Sapphire Ice", "Peridot Dust", "Obsidian Black", "Garnet Flame", "Crimson Sunset", "Amber Sunrise", "Opal Oasis", "Cerulean Dream", "Golden Sands", "Platinum Haze", "Rosewater", "Moonstone Blue", "Jade Jungle", "Lilac Mist", "Sable Suede", "Cinnamon Spice", "Electric Lavender", "Buttercup Bliss", "Celestial Peach", "Violet Velvet", "Emerald Envy", "Aquamarine Allure", "Sandy Beige", "Slate Gray","Neon Chartreuse","Electric Fuchsia","Turquoise Blue","Electric Lime","Electric Purple","Electric Ultramarine","Electric Blue","Electric Teal","Electric Green","Electric Yellow","Electric Orange","Electric Red","Electric Pink","Electric Crimson","Electric Violet","Electric Indigo",
+  "Electric Magenta","Electric Cyan","Electric Azure","Electric Rose","Electric Scarlet","Electric Lavender","Electric Coral"];
+  const animeList = [  "Attack on Titan",  "Naruto",  "Death Note",  "One Piece",  "Fullmetal Alchemist: Brotherhood",  "Sword Art Online",  "My Hero Academia",  "Demon Slayer: Kimetsu no Yaiba",  "Hunter x Hunter",  "Code Geass",  "Steins;Gate",  "Cowboy Bebop",  "Neon Genesis Evangelion",  "Dragon Ball Z",  "Bleach",  "Fairy Tail",  "Jojo's Bizarre Adventure",  "One Punch Man",  "Kimi no Na wa",  "Koe no Katachi",  "Haikyuu!!",  "Mob Psycho 100",  "Re:Zero − Starting Life in Another World",  "Toradora!",  "Your Lie in April",  "Clannad",  "Anohana",  "Fate/Zero",  "The Melancholy of Haruhi Suzumiya",  "Kill la Kill",  "Gurren Lagann",  "Madoka Magica",  "Magi: The Labyrinth of Magic",  "Black Clover",  "Dr. Stone",  "Fire Force",  "Gintama",  "K-On!",  "Lucky Star",  "Nichijou",  "Azumanga Daioh",  "Chobits",  "Ghost in the Shell",  "Psycho-Pass",  "Serial Experiments Lain","Texhnolyze",  "Paranoia Agent",  "Monster",  "Baccano!",  "Durarara!!",  "Log Horizon",  "No Game No Life",  "The Rising of the Shield Hero",  "Violet Evergarden",  "Banana Fish","Inuyasha",  "Rurouni Kenshin", "Yu Yu Hakusho", "Gintama", "Black Butler", "Soul Eater"];
+  const movieList = [`The Shawshank Redemption`,`The Godfather`,`The Dark Knight`,`Schindler's List`,`The Lord of the Rings: The Return of the King`,`Pulp Fiction`,`Forrest Gump`,`Star Wars: Episode V - The Empire Strikes Back`,`The Matrix`,`Goodfellas`,`The Silence of the Lambs`,`One Flew Over the Cuckoo's Nest`,`Se7en`,`The Usual Suspects`,`The Prestige`,`Fight Club`,`Inception`,`The Departed`,`The Green Mile`,`The Godfather: Part II`,`The Lord of the Rings: The Fellowship of the Ring`,`The Lord of the Rings: The Two Towers`,`Saving Private Ryan`,`Gladiator`,`The Terminator`,`Terminator 2: Judgment Day`,`Alien`,`Blade Runner`,`The Shining`,`The Exorcist`,`Psycho`,`Jaws`,`Rocky`,`The Karate Kid`,`Ghostbusters`,`Back to the Future`,`Indiana Jones and the Raiders of the Lost Ark`,`E.T. the Extra-Terrestrial`,`Jurassic Park`,`Titanic`,`Avatar`,`The Lion King`,`Beauty and the Beast`,`Aladdin`,`Toy Story`,`The Incredibles`,`Up`,`Inside Out`,`Finding Nemo`,`Wall-E`,`The Avengers`,`Iron Man`,`The Dark Knight Rises`,`Captain America: The Winter Soldier`,`Guardians of the Galaxy`,`Star Wars: Episode VII - The Force Awakens`,`The Martian`,`The Godfather: Part III`,`The Grand Budapest Hotel`,`The Social Network`,`Interstellar`,`Dunkirk`,`Inglourious Basterds`,`The Hateful Eight`,`The Revenant`,`The Wolf of Wall Street`,`No Country for Old Men`,`There Will Be Blood`,`Kill Bill: Vol. 1`,`Kill Bill: Vol. 2`,`Django Unchained`,`The Irishman`,`Once Upon a Time in Hollywood`,`The Shawshank Redemption`,`The Godfather`,`The Dark Knight`,`Schindler's List`,`The Lord of the Rings: The Return of the King`,`Pulp Fiction`,`Forrest Gump`,`Star Wars: Episode V - The Empire Strikes Back`,`The Matrix`,`Goodfellas`,`The Silence of the Lambs`,`One Flew Over the Cuckoo's Nest`,`Se7en`,`The Usual Suspects`,`The Prestige`,`Fight Club`,`Inception`,`The Departed`,`The Green Mile`,`The Godfather: Part II`,`The Lord of the Rings: The Fellowship of the Ring`,`The Lord of the Rings: The Two Towers`,`Saving Private Ryan`,`Gladiator`,`The Terminator`,`Terminator 2: Judgment Day`,`Alien`,`Blade Runner`,`The Shining`,`The Exorcist`,`Psycho`,`Jaws`,`Rocky`,`The Karate Kid`,`Ghostbusters`,`Back to the Future`,`Indiana Jones and the Raiders of the Lost Ark`,`E.T. the Extra-Terrestrial`,`Jurassic Park`,`Titanic`,`Avatar`,`The Lion King`,`Beauty and the Beast`,`Aladdin`,`Toy Story`,`The Incredibles`,`Up`,`Inside Out`,`Finding Nemo`,`Wall-E`,`The Avengers`,`Iron Man`,`The Dark Knight Rises`,`Captain America: The Winter Soldier`,`Guardians of the Galaxy`,`Star Wars: Episode VII - The Force Awakens`,`The Martian`,`The Godfather: Part III`,`The Grand Budapest Hotel`,`The Social Network`,`Interstellar`,`Dunkirk`,`Inglourious Basterds`,`The Hateful Eight`,`The Revenant`,`The Wolf of Wall Street`,`No Country for Old Men`,`There Will Be Blood`,`Kill Bill: Vol. 1`,];
+  const heroList = [  `Superman`,`Batman`,`Wonder Woman`,`Spider-Man`,`Iron Man`,`Captain America`,`Thor`,`The Flash`,`Green Lantern`,`Aquaman`,`Black Widow`,`Hulk`,`Doctor Strange`,`Black Panther`,`Captain Marvel`,`Ant-Man`,`Wasp`,`Vision`,`Scarlet Witch`,`Hawkeye`,`Daredevil`,`Luke Cage`,`Iron Fist`,`Jessica Jones`,`Elektra`,`Punisher`,`Groot`,`Rocket Raccoon`,`Star-Lord`,`Gamora`,`Drax`,`Agent Coulson`,`Nick Fury`,`Maria Hill`,`Phil Coulson`,`Melinda May`,`Daisy Johnson`,`Bobbi Morse`,`Lance Hunter`,`Leo Fitz`,`Jemma Simmons`,`Robbie Reyes`,`Ghost Rider`,`Quake`,`Peggy Carter`,`Howard Stark`,`Edwin Jarvis`,`Ant-Man (Scott Lang)`,`Falcon`,`Winter Soldier`,`Vision`,`Scarlet Witch`,`Spider-Woman`,`She-Hulk`,`Ms. Marvel`,`Nova`,`Moon Knight`,`Blade`,`Hellcat`,`Silver Surfer`,`Namor`,`Squirrel Girl`,`Miles Morales`,`Kamala Khan`,`Ironheart`,`America Chavez`,`Shang-Chi`,`Riri Williams`,`Kate Bishop`,`Jessica Drew`,`Sam Wilson`,`Jane Foster`,`Bucky Barnes`,`Carol Danvers`,`T'Challa`,`Peter Quill`,`Adam Warlock`,`Hercules`,`Ego`,`Galactus`,`Black Bolt`,`Medusa`,`Crystal`,`Karnak`,`Gorgon`,`Lockjaw`,`Maximus`,`Captain Britain`,`Psylocke`,`Colossus`,`Cable`,`Gambit`,`Jubilee`,`Bishop`,`Forge`,`Longshot`,`Deadpool`,`Spider-Gwen`,`Spider-Man 2099`,`Black Knight`];
+  const actorList = [`Tom Hanks`,`Meryl Streep`,`Leonardo DiCaprio`,`Emma Stone`,`Brad Pitt`,`Angelina Jolie`,`Robert De Niro`,`Al Pacino`,`Denzel Washington`,`Kate Winslet`,`Joaquin Phoenix`,`Cate Blanchett`,`Johnny Depp`,`Natalie Portman`,`Dwayne Johnson`,`Scarlett Johansson`,`Mark Wahlberg`,`Will Smith`,`Charlize Theron`,`Matt Damon`,`Julia Roberts`,`George Clooney`,`Jennifer Lawrence`,`Hugh Jackman`,`Anne Hathaway`,`Samuel L. Jackson`,`Harrison Ford`,`Anthony Hopkins`,`Tom Cruise`,`Nicole Kidman`,`Judi Dench`,`Kevin Spacey`,`Dustin Hoffman`,`Ben Affleck`,`Christian Bale`,`Jessica Chastain`,`Saoirse Ronan`,`Eddie Redmayne`,`Viola Davis`,`Idris Elba`,`Michael Fassbender`,`Gal Gadot`,`Mahershala Ali`,`Octavia Spencer`,`Cynthia Erivo`,`Chadwick Boseman`,`Daniel Kaluuya`,`Emma Watson`,`Ryan Reynolds`,`Chris Evans`];
+  const animeCharacterList = [`Monkey D. Luffy`,`Naruto Uzumaki`,`Saitama`,`Ichigo Kurosaki`,`Edward Elric`,`Goku`,`Kirito`,`Light Yagami`,`Levi Ackerman`,`Eren Yeager`,`Mikasa Ackerman`,`Alphonse Elric`,`Roy Mustang`,`Kakashi Hatake`,`Sasuke Uchiha`,`Shoto Todoroki`,`Izuku Midoriya`,`All Might`,`Gon Freecss`,`Killua Zoldyck`,`Kurapika`,`Hisoka Morow`,`Lelouch vi Britannia`,`Spike Spiegel`,`Shinji Ikari`,`Asuka Langley Soryu`,`Rei Ayanami`,`Vash the Stampede`,`Sora`,`Riku`,`Kairi`,`Cloud Strife`,`Squall Leonhart`,`Tifa Lockhart`,`Aerith Gainsborough`,`Sephiroth`,`Ryuko Matoi`,`Satsuki Kiryuin`,`Mako Mankanshoku`,`Nonon Jakuzure`,`Rin Tohsaka`,`Saber`,`Archer`,`Kiritsugu Emiya`,`Rider`,`Shirou Emiya`,`Joseph Joestar`,`Jotaro Kujo`,`Dio Brando`,`Giorno Giovanna`,`Saito Hajime`,`Okita Sougo`,`Kagura`,`Gintoki Sakata`,`Kamina`,`Simon`,`Yoko Littner`,`Kaneda`,`Tetsuo`,`Motoko Kusanagi`,`Batou`,`Spike Spiegel`,`Faye Valentine`,`Jet Black`,`Guts`,`Griffith`,`Casca`,`Mugen`,`Jin`,`Fuu`,`Kenshin Himura`,`Sanosuke Sagara`,`Kaoru Kamiya`,`Saito Hajime`,`Kurama`,`Hiei`,`Yusuke Urameshi`,`Kuwabara`,`Black Star`,`Death the Kid`,`Maka Albarn`,`Soul Eater Evans`,`Alucard`,`Seras Victoria`,`Integra Hellsing`,`Riza Hawkeye`,`Maes Hughes`,`Edward Newgate`,`Monkey D. Garp`,`Portgas D. Ace`,`Shanks`,`Boa Hancock`,`Jinbe`,`Brook`,`Robin`,`Nami`,`Usopp`,`Franky`,`Tony Tony Chopper`,`Shinichi Kudo`,`Ran Mouri`,`Heiji Hattori`,`Kaito Kuroba`,`Aoko Nakamori`];
+  const comicList = [`Watchmen`,`The Dark Knight Returns`,`Sandman`,`Preacher`,`Maus`,`Batman: Year One`,`Saga`,`V for Vendetta`,`Y: The Last Man`,`Transmetropolitan`,`The Walking Dead`,`Fables`,`Sin City`,`Locke & Key`,`The Boys`,`The Umbrella Academy`,`Scott Pilgrim`,`Bone`,`Hellboy`,`The Sandman Universe`,`Batman: The Killing Joke`,`Kingdom Come`,`Marvels`,`Batman: The Long Halloween`,`Batman: Hush`,`All-Star Superman`,`Superman: Red Son`,`The Infinity Gauntlet`,`Spider-Man: Kraven's Last Hunt`,`The Amazing Spider-Man: The Night Gwen Stacy Died`,`Batman: Arkham Asylum`,`The Authority`,`The Invisibles`,`Batman: The Court of Owls`,`Daredevil: Born Again`,`Civil War`,`The Ultimates`,`X-Men: God Loves, Man Kills`,`The New Mutants`,`Saga of the Swamp Thing`,`American Splendor`,`Strangers in Paradise`,`Bone`,`The Maxx`,`Batman: The Dark Knight Strikes Again`,`Daredevil: The Man Without Fear`,`The Punisher: Welcome Back, Frank`,`Marvels: Eye of the Camera`,`Batman: Year 100`,`Batman: The Black Mirror`,`Batman: The Dark Knight Returns - The Last Crusade`,`Batman: The Dark Knight III - The Master Race`,`Batman: White Knight`,`Batman: Curse of the White Knight`,`Batman: Last Knight on Earth`,`Batman: Three Jokers`,`Superman: Earth One`,`Joker`,`Harleen`,`Spider-Man: Life Story`,`Doomsday Clock`,`Watchmen: The HBO Series`,`The Sandman: Overture`,`Locke & Key: Welcome to Lovecraft`,`Chew`,`Invincible`,`Sex Criminals`,`Lazarus`,`Black Hammer`,`The Fade Out`,`Southern Bastards`,`Manifest Destiny`,`Low`,`Wytches`,`We3`,`Scalped`,`Sweet Tooth`,`Daytripper`,`The Wicked + The Divine`,`Rat Queens`,`Red Sonja`,`Lumberjanes`,`Bitch Planet`,`Ms. Marvel`,`Captain Marvel`,`Hawkeye`,`Runaways`,`The Immortal Hulk`,`X-Men: Grand Design`,`Thor: God of Thunder`,`The Vision`,`The Sheriff of Babylon`,`East of West`,`Descender`,`Monstress`,`Paper Girls`,`Punk Rock Jesus`,`Silver Surfer`,`God Country`,`Injection`,`Moon Knight`,`Snotgirl`,`The Fix`,`Royal City`,`My Favorite Thing Is Monsters`,`Rumble`,`The Flintstones`,`Black Monday Murders`,`Dept. H`,`Briggs Land`,`Lady Killer`,`Dept. H`,`Briggs Land`,`Lady Killer`,`Tomboy`,`Moonshine`,`The Spire`,`The Autumnlands`,`Head Lopper`,`Wolf`,`Nailbiter`,`Postal`,`Southern Cross`,`Redlands`,`Black Magick`,`Copperhead`,`The Chilling Adventures of Sabrina`,`Archie`,`Afterlife with Archie`,`Fatale`,`Criminal`,`The Fade Out`,`Undertow`,`Zero`,`Alex + Ada`,`The Private Eye`];
+  const comicStyleList = [`Superhero`,`Science Fiction`,`Horror`,`Fantasy`,`Mystery`,`Action/Adventure`,`Comedy`,`Crime`,`Historical Fiction`,`Romance`,`Drama`,`Thriller`,`Slice of Life`,`Western`,`Satire`,`Post-Apocalyptic`,`Spy`,`Sports`,`War`,`Medical Drama`,`Steampunk`,`Cyberpunk`,`Dystopian`,`Urban Fantasy`,`Magical Girl`,`Magical Realism`,`Gothic`,`Surrealism`,`Absurdism`,`Romantic Comedy`,`Musical`,`Documentary`,`Biography`,`Autobiography`,`Travelogue`,`Cooking`,`Self-Help`,`Philosophy`,`Political Satire`,`Coming-of-Age`,`Erotica`,`Educational`,`Art`,`Experimental`,`Superhero Deconstruction`,`Anthology`,`Crossover`,`Alternate History`,`Furry`,`LGBTQ+`];
+  const aspectRatioList = ["1:1","2:1","16:19"]
+  
+  var reWait=0, upWait=2
+c1.addEventListener("click", function() {
+if(retURL.length>10){
+  win = window.open(retURL, '_blank');   win.focus(); }
+})
+vc1.addEventListener("click", function() {
+      if(retURL.length>10){
+        urlElem.value="Upscaling";leoUpscale(retId1)
+      }
+})
+      
+c2.addEventListener("click", function() {
+if(retURL2.length>10){
+  win = window.open(retURL2, '_blank');   win.focus(); }
+})
+vc2.addEventListener("click", function() {
+      if(retURL2.length>10){
+        urlElem.value="Upscaling";leoUpscale(retId2)
+      }
+})
+c3.addEventListener("click", function() {
+if(retURL3.length>10){
+  win = window.open(retURL3, '_blank');   win.focus(); }
+})
+vc3.addEventListener("click", function() {
+      if(retURL3.length>10){
+        urlElem.value="Upscaling";leoUpscale(retId3)
+      }
+})
+c4.addEventListener("click", function() {
+if(retURL4.length>10){
+  win = window.open(retURL4, '_blank');   win.focus(); }
+})
+vc4.addEventListener("click", function() {
+      if(retURL4.length>10){
+        urlElem.value="Upscaling";leoUpscale(retId4)
+      }
+})
+c5.addEventListener("click", function() {
+  if(retURL5.length>10){
+    win = window.open(retURL5, '_blank');   win.focus(); }
+  })
+/* vc5.addEventListener("click", function() {
+  leoApiKey=prompt('Enter API key')
+  document.cookie = "k="+leoApiKey+"; expires=Thu, 1 Dec 2050 12:00:00 UTC";
+    vct5.clearRect(0,0,size,upsize)
+    vct5.fillText(leoApiKey,2,Math.floor(.8*upsize))
+    urlElem.value='Checking API key'
+    leoCount()
+        }) */
+
+
+function leoUpscale(leouId){
+ 
+  const option4 = {
+  method: 'POST',
+  headers: {
+    accept: 'application/json',
+    'content-type': 'application/json',
+    authorization: `Bearer ${leoApiKey}`
+  },
+  body: JSON.stringify({id: leouId})
+};
+ 
+
+fetch('https://cloud.leonardo.ai/api/rest/v1/variations/upscale', option4)
+  .then(response => response.json())
+  .then(response => {leo=response.sdUpscaleJob.id;
+                urlElem.value="Upscaled id="+leo;
+                setTimeout(forth,2000);
+                })
+  .catch(err => alert(err));
+}
+
+function forth(){
+  urlElem.value="Please wait 20 seconds"
+  setTimeout(thirdApi,19000)
+}
+    
+function thirdApi(){
+  upWait++
+  const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    authorization: `Bearer ${leoApiKey}`
+  }
+};
+
+fetch('https://cloud.leonardo.ai/api/rest/v1/variations/'+leo, options)
+  .then(response => response.json())
+  .then(response => {retURL5=response.generated_image_variation_generic[0].url;     
+       img5.src=retURL5
+       leoCount()   
+       } )
+  .catch(err => {alert('Upscale err='+err)}); 
+}
+   
+function leoCount(){
+  const option3 = {
+    method: 'GET',
+    headers: {accept: 'application/json',authorization: `Bearer ${leoApiKey}`}
+   };
+
+  fetch('https://cloud.leonardo.ai/api/rest/v1/me', option3)
+    .then(response => response.json())
+    .then(response => {leoCredits=response.user_details[0].subscriptionTokens;
+                       leoCredMax=response.user_details[0].subscriptionGptTokens;
+                       logCredits()} )
+    .catch(err => urlElem.value="API error="+err);
+}
+
+function logCredits(){
+  urlElem.value="Token "+leoCredits+"/"+leoCredMax+" Screen "+screenw+"x "+screenh
+}
+    
+setTimeout(leoCount,2900)
+
+
+
+function clearWins(){
+ct1.clearRect(0,0,size,size)
+ct2.clearRect(0,0,size,size)
+ct3.clearRect(0,0,size,size)
+ct4.clearRect(0,0,size,size)
+retURL=""
+retURL2=""
+retURL3=""
+retURL4=""
+urlElem.value="Processing..."
+}
+
+function leonardo(){
+  reWait=0
+ if (leoTime!=0){return}
+ leoTime++
+ promp= promptDiv.innerHTML
+
+
+ magicSet=false
+ if(document.getElementById("mag").value=='true')
+    {magicSet=true}
+   tileSet=false
+ if(document.getElementById("til").value=='true')
+    {tileSet=true}
+ 
+ ct1.drawImage(waiting, 0,0,100,100,0,0,70,70);
+ if(document.getElementById("qual").value==".5"){leoWait=40, dims=512}
+ if(document.getElementById("qual").value=="1" ){leoWait=45, dims=768}
+ if(document.getElementById("qual").value=="2" ){leoWait=50, dims=1024}
+ img2img=""
+ if(document.getElementById("im2").value=="1"){img2img=retId1; img5.src=retURL}
+ if(document.getElementById("im2").value=="2"){img2img=retId2; img5.src=retURL2}  
+ if(document.getElementById("im2").value=="3"){img2img=retId3; img5.src=retURL3}
+ if(document.getElementById("im2").value=="4"){img2img=retId4; img5.src=retURL4}
+ clearWins()
+ if(img2img!=""){ alert("Using previous Img ID="+img2img) }
+ 
+
+ 
+  const option1 = {
+  method: 'POST',
+  headers: {
+    accept: 'application/json',
+    'content-type': 'application/json',
+    authorization: `Bearer ${leoApiKey}`
+  },
+  body: JSON.stringify({prompt: promp,
+  modelId:"b820ea11-02bf-4652-97ae-9ac0cc00593d", width: dims, height: dims,
+  init_generation_image_id: img2img,
+  tiling: tileSet,                      
+  promptMagic: magicSet,
+  scheduler: "LEONARDO", num_inference_steps: 30, sd_version: 'v2'})
+};
+leo=""
+fetch('https://cloud.leonardo.ai/api/rest/v1/generations', option1)
+  .then(response => response.json())
+  .then(data => {leo=data.sdGenerationJob.generationId
+                urlElem.value="SeriesID "+leo
+                leoTimer()})
+  .catch(err => {alert('APIerror check key')
+                 leoTime=0
+                 clearWins()
+                 urlElem.value=""
+                 }
+                 );
+}
+
+function leoTimer(){
+ if(magicSet==true){
+ ct1.fillRect(Math.random()*size,Math.random()*size,3,3) }
+  if(leoTime<leoWait+10*reWait){ct1.fillRect(0,.7*size,.004*leoTime*size,.2*size); leoTime++;setTimeout(leoTimer,100);return}
+  
+  secondAPI()
+}
+
+function secondAPI(){
+  urlElem.value='Fetching Image URLs'
+ ct1.drawImage(waiting, 100,0,100,100,0,0,70,70);
+  const option2 = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    authorization: `Bearer ${leoApiKey}`
+  }
+};
+
+   fetch('https://cloud.leonardo.ai/api/rest/v1/generations/'+leo, option2)
+  .then(response => response.json())
+  .then(data => {
+     
+      leoTime=0
+    retURL=data.generations_by_pk.generated_images[0].url
+    retId1=data.generations_by_pk.generated_images[0].id
+    img.src =retURL
+    retURL2=data.generations_by_pk.generated_images[1].url
+    retId2=data.generations_by_pk.generated_images[1].id
+    img2.src =retURL2
+    retURL3=data.generations_by_pk.generated_images[2].url
+    retId3=data.generations_by_pk.generated_images[2].id 
+    img3.src =retURL3
+    retURL4=data.generations_by_pk.generated_images[3].url
+    retId4=data.generations_by_pk.generated_images[3].id
+    img4.src =retURL4
+    vary()
+    urlElem.value="Click to Enlarge"
+ })
+  .catch(err =>{
+       reWait++
+       urlElem.value='..Waiting x'+reWait
+       if(reWait<50){leoTimer()}
+     });
+}
+
+    
+function generatePrompt() {
+  promp = "";
+  if (document.getElementById("start_prompt").checked) {
+    promp += startPromptList[Math.floor(Math.random() * startPromptList.length)] + ", ";
+  }
+  if (document.getElementById("prompts").checked) {
+    promp += promptsList[Math.floor(Math.random() * promptsList.length)] + ", ";
+  }
+  if (document.getElementById("objects").checked) {
+    promp += objectsList[Math.floor(Math.random() * objectsList.length)] + ", ";
+  }
+  if (document.getElementById("animals").checked) {
+    promp += animalsList[Math.floor(Math.random() * animalsList.length)] + ", ";
+  }
+  if (document.getElementById("environment").checked) {
+    promp += environmentList[Math.floor(Math.random() * environmentList.length)] + ", ";
+  }
+  if (document.getElementById("animeCharacters").checked) {
+  promp += animeCharacterList[Math.floor(Math.random() * animeCharacterList.length)] + ", ";
+  }
+  if (document.getElementById("anime").checked) {
+  promp += animeList[Math.floor(Math.random() * animeList.length)] + ", ";
+  }
+  if (document.getElementById("movies").checked) {
+    promp += movieList[Math.floor(Math.random() * movieList.length)] + ", ";
+  }
+  if (document.getElementById("actors").checked) {
+    promp += actorList[Math.floor(Math.random() * actorList.length)] + ", ";
+  }
+  if (document.getElementById("heroes").checked) {
+    promp += heroList[Math.floor(Math.random() * heroList.length)] + ", ";
+  }
+  if (document.getElementById("comics").checked) {
+    promp += comicList[Math.floor(Math.random() * comicList.length)] + ", ";
+  }
+  if (document.getElementById("comicStyles").checked) {
+    promp += comicStyleList[Math.floor(Math.random() * comicStyleList.length)] + ", ";
+  }
+  if (document.getElementById("photo_effects").checked) {
+    promp += photoEffectsList[Math.floor(Math.random() * photoEffectsList.length)] + ", ";
+  }
+  if (document.getElementById("render_type").checked) {
+    promp += renderTypeList[Math.floor(Math.random() * renderTypeList.length)] + ", ";
+  }
+  if (document.getElementById("art_style").checked) {
+    promp += artStyleList[Math.floor(Math.random() * artStyleList.length)] + ", ";
+  }
+  if (document.getElementById("quality_modifiers").checked) {
+    promp += qualityModifiersList[Math.floor(Math.random() * qualityModifiersList.length)] + ", ";
+  }
+  if (document.getElementById("artists").checked) {
+    promp += artistsList[Math.floor(Math.random() * artistsList.length)] + ", ";
+  }
+  
+  if (document.getElementById("colors").checked) {
+    promp += colorsList[Math.floor(Math.random() * colorsList.length)] + ", ";
+  }
+  if (document.getElementById("seed").checked) {
+    promp += "--seed "+ ~~(Math.random()*10000000 +1) + " ";
+  }
+  if (document.getElementById("chaos").checked) {
+    promp += "--chaos "+ ~~(Math.random()*100 +1) + " ";
+  }
+  if (document.getElementById("Aspect Ratio").checked) {
+    promp +="--ar "+ document.getElementById("asp").value;
+    }
+  
+  promptDiv.innerHTML = promp;
+}
+
+ // Enable the copy button
+  copyButton.disabled = false;
+
+  generateButton.addEventListener("click", function() {
+    generatePrompt();
+  });
+
+  urlButton.addEventListener("click", function() {
+    leonardo()
+  });
+    
+copyButton.addEventListener("click", function() {
+  const range = document.createRange();
+  range.selectNode(promptDiv);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  try {
+    const successful = document.execCommand('copy');
+    const message = successful ? 'Prompt copied to clipboard.' : 'Unable to copy prompt.';
+    console.log(message);
+    alert(message);
+  } catch (err) {
+    console.log('Failed to copy prompt:', err);
+    alert('An error occurred while copying the prompt. Please try again.');
+  }
+  window.getSelection().removeAllRanges();
+});
+
+document.getElementById("donation-button").addEventListener("click", function() {
+  window.open('https://donate.stripe.com/7sI9DF04EgRP3y8cMM', '_blank');
+});
+
+  </script>
+  </body>
+</html>
