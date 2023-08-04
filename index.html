@@ -338,9 +338,17 @@ function vary(){
     
     var promptsList = [];
     promptsLoad();
-    function promptsLoad(){
-      promptsList=['Beautiful city','Ancient village'];
-    }
+  
+      async function promptsLoad() {
+  try {
+    const response = await fetch('prompts.txt');
+    const data = await response.text();
+    promptzList = data.trim().split('\n');
+  } catch (error) {
+    console.error('Error fetching items.txt:', error);
+  }
+ }
+    
   const objectsList = [];
   const animalsList = [];
   const environmentList = [];
@@ -474,7 +482,7 @@ function leoCount(){
 }
 
 function logCredits(){
-  urlElem.value="Token "+leoCredits+"/"+leoCredMax+" Screen "+screenw+"x "+screenh
+  urlElem.value="T= "+leoCredits+"/"+leoCredMax+" Screen "+screenw+"x "+screenh
 }
     
 setTimeout(leoCount,2900)
