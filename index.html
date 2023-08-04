@@ -91,10 +91,7 @@
     <br>
    
     <div class="checkbox-container">
-      <div class="checkbox">
-        <input type="checkbox" id="start_prompt">
-        <label for="start_prompt">Start Prompt</label>
-      </div>
+      
       <div class="checkbox">
         <input type="checkbox" id="prompts">
         <label for="prompts">Prompts</label>
@@ -338,8 +335,12 @@ function vary(){
     var urlElem=document.getElementById('urltext')
     urlElem.value="Select&Generate->Copy or GetImage"
 
-    const startPromptList = ["/Imagine Prompt:"];
-    const promptsList = [];
+    
+    var promptsList = [];
+    promptsLoad();
+    function promptsLoad(){
+      promptsList=['Beautiful city','Ancient village'];
+    }
   const objectsList = [];
   const animalsList = [];
   const environmentList = [];
@@ -597,9 +598,7 @@ function secondAPI(){
     
 function generatePrompt() {
   promp = "";
-  if (document.getElementById("start_prompt").checked) {
-    promp += startPromptList[Math.floor(Math.random() * startPromptList.length)] + ", ";
-  }
+  
   if (document.getElementById("prompts").checked) {
     promp += promptsList[Math.floor(Math.random() * promptsList.length)] + ", ";
   }
