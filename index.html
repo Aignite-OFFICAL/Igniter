@@ -161,23 +161,8 @@
         <input type="checkbox" id="colors">
         <label for="colors">Colors</label>
       </div>
-      <div class="checkbox">
-        <input type="checkbox" id="seed">
-        <label for="seed">Seed</label>
-     </div>
-       <div class="checkbox">
-        <input type="checkbox" id="chaos">
-        <label for="chaos">Chaos</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" id="Aspect Ratio">
-        <label for="Aspect Ratio">Aspect Ratio</label>
-        <select name="Aspect Ratio" id="asp">
-          <option value="1:1">1:1</option>
-          <option value="16:9">16:9</option>  
-          <option value="2:1">2:1</option>
-        </select>
-      </div>
+      
+      
 
       <div class="checkbox">
         <label for="abc">Size</label>
@@ -659,15 +644,7 @@ function generatePrompt() {
   if (document.getElementById("colors").checked) {
     promp += colorsList[Math.floor(Math.random() * colorsList.length)] + ", ";
   }
-  if (document.getElementById("seed").checked) {
-    promp += "--seed "+ ~~(Math.random()*10000000 +1) + " ";
-  }
-  if (document.getElementById("chaos").checked) {
-    promp += "--chaos "+ ~~(Math.random()*100 +1) + " ";
-  }
-  if (document.getElementById("Aspect Ratio").checked) {
-    promp +="--ar "+ document.getElementById("asp").value;
-    }
+  
   
   promptDiv.innerHTML = promp;
 }
