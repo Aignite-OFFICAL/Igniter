@@ -147,7 +147,7 @@
       </div>
       <div class="checkbox">
         <input type="checkbox" id="quality_modifiers">
-        <label for="quality_modifiers">Quality Modifiers</label>
+        <label for="quality_modifiers">Style</label>
       </div>
       <div class="checkbox">
         <input type="checkbox" id="artists">
@@ -158,7 +158,7 @@
         <input type="checkbox" id="colors">
         <label for="colors">Colors</label>
       </div>
-  
+  <br>
       <div class="checkbox">
         <label for="abc">Size</label>
           <select name="abc" id="qual">
@@ -357,7 +357,17 @@ function vary(){
     alert('Error photoeffects txt:'+error);
   }
  }
-  const qualityModifiersList = [];
+  var qualityModifiersList = [];
+      qualityLoad();
+  async function qualityLoad() {
+  try {
+    const response = await fetch('qualitymodifiers3.txt');
+    const data = await response.text();
+    qualityModifiersList = data.trim().split('\n');
+  } catch (error) {
+    alert('Error style txt:'+error);
+  }
+ }
     
   const artStyleList = [];
     
