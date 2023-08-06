@@ -159,6 +159,7 @@
         <label for="colors">Colors</label>
       </div>
   <br>
+  <br>
       <div class="checkbox">
         <label for="abc">Size</label>
           <select name="abc" id="qual">
@@ -358,7 +359,7 @@ function vary(){
   }
  }
   var qualityModifiersList = [];
-      qualityLoad();
+   qualityLoad();
   async function qualityLoad() {
   try {
     const response = await fetch('qualitymodifiers3.txt');
