@@ -361,7 +361,7 @@ function vary(){
   try {
     const response = await fetch('photoEffects3.txt');
     const data = await response.text();
-    animalsList = data.trim().split('\n');
+    photoEffectsList = data.trim().split('\n');
   } catch (error) {
     alert('Error photo txt:'+error);
   }
