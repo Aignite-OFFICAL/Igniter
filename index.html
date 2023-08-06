@@ -327,7 +327,7 @@ function vary(){
     const data = await response.text();
     promptsList = data.trim().split('\n');
   } catch (error) {
-    console.error('Error fetching items.txt:', error);
+    alert('Error promps txt:'+error);
   }
  }
     
@@ -339,7 +339,7 @@ function vary(){
     const data = await response.text();
     objectsList = data.trim().split('\n');
   } catch (error) {
-    console.error('Error fetching items.txt:', error);
+    alert('Error objects txt:'+error);
   }
  }
     
@@ -351,10 +351,10 @@ function vary(){
     const data = await response.text();
     animalsList = data.trim().split('\n');
   } catch (error) {
-    console.error('Error fetching items.txt:', error);
+    alert('Error animals txt:'+error);
   }
  }
-  const environmentList = [];
+
   const photoEffectsList = [];
   const qualityModifiersList = [];
     
