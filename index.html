@@ -158,8 +158,6 @@
         <input type="checkbox" id="colors">
         <label for="colors">Colors</label>
       </div>
-  <br>
-  <br>
       <div class="checkbox">
         <label for="abc">Size</label>
           <select name="abc" id="qual">
@@ -312,8 +310,7 @@ function vary(){
     
     var promptsList = [];
     promptsLoad();
-  
-      async function promptsLoad() {
+    async function promptsLoad() {
   try {
     const response = await fetch('prompts.txt');
     const data = await response.text();
@@ -376,7 +373,7 @@ function vary(){
   try {
     const response = await fetch('artstyles3.txt');
     const data = await response.text();
-    artStylesList = data.trim().split('\n');
+    artStyleList = data.trim().split('\n');
   } catch (error) {
     alert('Error art txt:'+error);
   }
