@@ -166,7 +166,7 @@
             <option value="2">Large</option>
           </select>
       </div>
-
+      
       <div class="checkbox">
         <label for="magic">Magic</label>
         <select name="magic" id="mag">
@@ -174,7 +174,6 @@
           <option value="true">true</option>
         </select>
       </div>
-      
       
       <div class="checkbox">
         <label for="tile">Tiling</label>
@@ -356,7 +355,7 @@ function vary(){
   }
  }
   var qualityModifiersList = [];
-   qualityLoad();
+ //  qualityLoad();
   async function qualityLoad() {
   try {
     const response = await fetch('qualitymodifiers3.txt');
