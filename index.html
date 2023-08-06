@@ -145,10 +145,7 @@
         <input type="checkbox" id="art_style">
         <label for="art_style">Art Styles</label>
       </div>
-      <div class="checkbox">
-        <input type="checkbox" id="quality_modifiers">
-        <label for="quality_modifiers">Quality Modifiers</label>
-      </div>
+
       <div class="checkbox">
         <input type="checkbox" id="artists">
         <label for="artists">Artists</label>
@@ -356,17 +353,7 @@ function vary(){
     alert('Error photoeffects txt:'+error);
   }
  }
-  var qualityModifiersList = [];
-   qualityLoad();
-  async function qualityLoad() {
-  try {
-    const response = await fetch('quality.txt');
-    const data = await response.text();
-    qualityModifiersList = data.trim().split('\n');
-  } catch (error) {
-    alert('Error quality txt:'+error);
-  }
- }
+
     
   var artStyleList = [];
   artLoad();
@@ -404,8 +391,30 @@ function vary(){
   }
  }
     
-  const animeList = [];
-  const movieList = [];
+  var animeList = [];
+  animeLoad();
+  async function animeLoad() {
+  try {
+    const response = await fetch('anime3.txt');
+    const data = await response.text();
+    animeList = data.trim().split('\n');
+  } catch (error) {
+    alert('Error anime txt:'+error);
+  }
+ }
+    
+  var movieList = [];
+  movieLoad();
+  async function movieLoad() {
+  try {
+    const response = await fetch('movies3.txt');
+    const data = await response.text();
+    movieList = data.trim().split('\n');
+  } catch (error) {
+    alert('Error movie txt:'+error);
+  }
+ }
+    
   const heroList = [];
   const actorList = [];
   const animeCharacterList = [];
@@ -691,9 +700,7 @@ function generatePrompt() {
   if (document.getElementById("art_style").checked) {
     promp += artStyleList[Math.floor(Math.random() * artStyleList.length)] + ", ";
   }
-  if (document.getElementById("quality_modifiers").checked) {
-    promp += qualityModifiersList[Math.floor(Math.random() * qualityModifiersList.length)] + ", ";
-  }
+  
   if (document.getElementById("artists").checked) {
     promp += artistsList[Math.floor(Math.random() * artistsList.length)] + ", ";
   }
