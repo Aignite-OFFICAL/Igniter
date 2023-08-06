@@ -154,9 +154,7 @@
         <input type="checkbox" id="colors">
         <label for="colors">Colors</label>
       </div>
-      <div>
-        <br>
-      </div>
+      
       <div class="checkbox">
         <label for="abc">Size</label>
           <select name="abc" id="qual">
@@ -451,9 +449,41 @@ function vary(){
   }
  }
     
-  const animeCharacterList = [];
-  const comicList = [];
-  const comicStyleList = [];
+  var animeCharacterList = [];
+  animeChLoad();
+  async function animeChLoad() {
+  try {
+    const response = await fetch('animecharacters3.txt');
+    const data = await response.text();
+    animeCharacterList = data.trim().split('\n');
+  } catch (error) {
+    alert('Error animechar txt:'+error);
+  }
+ }
+  
+  var comicList = [];
+  comicLoad();
+  async function comicLoad() {
+  try {
+    const response = await fetch('comics3.txt');
+    const data = await response.text();
+    comicList = data.trim().split('\n');
+  } catch (error) {
+    alert('Error comics txt:'+error);
+  }
+ }
+    
+  var comicStyleList = [];
+    comicstyleLoad();
+  async function comicstyleLoad() {
+  try {
+    const response = await fetch('comicstyles3.txt');
+    const data = await response.text();
+    comicStylesList = data.trim().split('\n');
+  } catch (error) {
+    alert('Error comic Styles txt:'+error);
+  }
+ }
 
   
   var reWait=0, upWait=2
