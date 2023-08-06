@@ -426,6 +426,7 @@ function vary(){
     alert('Error hero txt:'+error);
   }
  }
+    
  var renderTypeList=[];
   renderLoad();
   async function renderLoad() {
@@ -437,7 +438,19 @@ function vary(){
     alert('Error render txt:'+error);
   }
  }
-  const actorList = [];
+    
+  var actorList = [];
+  actLoad();
+  async function actLoad() {
+  try {
+    const response = await fetch('actors3.txt');
+    const data = await response.text();
+    actorList = data.trim().split('\n');
+  } catch (error) {
+    alert('Error actor txt:'+error);
+  }
+ }
+    
   const animeCharacterList = [];
   const comicList = [];
   const comicStyleList = [];
