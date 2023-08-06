@@ -1,0 +1,149 @@
+Refraction
+Mirror
+Distortion
+Warp
+Reflection
+Kaleidoscope
+Inversion
+Pixelation
+Fragmentation
+Spiral
+Twirl
+Zoom
+Puzzle
+Perspective
+Optical
+Ripple
+Wave
+Flow
+Blur
+Double Vision
+Flicker
+Strobe
+Glitch
+Scanlines
+Noise
+Static
+TV
+Radial
+Swirl
+Mosaic
+Crop
+Slice
+Dice
+Cutout
+Chop
+Fracture
+Shatter
+Explode
+Impact
+Collapse
+Disintegration
+Eclipse
+Shadow
+Silhouette
+Outline
+Glow
+Flare
+Light
+Luminance
+Radiance
+Glimmer
+Sparkle
+Flicker
+Twinkle
+Shimmer
+Reflection
+Rainbow
+Prism
+Rain
+Drops
+Mist
+Fog
+Smoke
+Haze
+Blur
+Fuzz
+Pixel
+Block
+Melt
+Drip
+Run
+Trickle
+Saturate
+Tint
+Hue
+Tonal
+Monochrome
+Duotone
+Gradient
+Ombre
+Blend
+Merge
+Fuse
+Mingle
+Mix
+Combine
+Overlay
+Layer
+Stack
+Collage
+Assemble
+Construct
+Build
+Pencil
+Charcoal
+Pastel
+Marker
+Colored Pencil
+Collage
+Gouache
+Digital Art
+Neon
+Glow
+Halftone
+Crosshatch
+Stipple
+Pointillism
+Engraving
+Woodcut
+Etching
+Lithograph
+Screen Print
+Letterpress
+Giclee
+Pigment Print
+Dye Sublimation
+Archival Print
+Giclée Print
+Posterization
+Halftone Pattern
+Crosshatch Pattern
+Stipple Pattern
+Pointillism Pattern
+Engraving Pattern
+Woodcut Pattern
+Etching Pattern
+3D
+2D
+Vector
+Raster
+Pixel Art
+Isometric
+Orthographic
+Textured
+Shaded
+Shadowed
+Reflected
+Transparent
+Glossy
+Matte
+Bumpy
+Smooth
+Fractal
+Procedural
+Particle
+Fluid
+Volumetric
+Non-Photorealistic
+Photo-Realistic
