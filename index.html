@@ -415,12 +415,23 @@ function vary(){
   }
  }
     
-  const heroList = [];
+  var heroList = [];
+      heroLoad();
+  async function heroLoad() {
+  try {
+    const response = await fetch('hero3.txt');
+    const data = await response.text();
+    heroList = data.trim().split('\n');
+  } catch (error) {
+    alert('Error hero txt:'+error);
+  }
+ }
+    var renderTypeList=[]
   const actorList = [];
   const animeCharacterList = [];
   const comicList = [];
   const comicStyleList = [];
-  const aspectRatioList = []
+
   
   var reWait=0, upWait=2
 c1.addEventListener("click", function() {
