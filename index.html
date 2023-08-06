@@ -335,7 +335,28 @@ function vary(){
  }
     
   const objectsList = [];
+  objectsLoad();
+  async function objectsLoad() {
+  try {
+    const response = await fetch('objects3.txt');
+    const data = await response.text();
+    objectsList = data.trim().split('\n');
+  } catch (error) {
+    console.error('Error fetching items.txt:', error);
+  }
+ }
+    
   const animalsList = [];
+  animalsLoad();
+    async function animalsLoad() {
+  try {
+    const response = await fetch('animals3.txt');
+    const data = await response.text();
+    animalsList = data.trim().split('\n');
+  } catch (error) {
+    console.error('Error fetching items.txt:', error);
+  }
+ }
   const environmentList = [];
   const photoEffectsList = [];
   const qualityModifiersList = [];
