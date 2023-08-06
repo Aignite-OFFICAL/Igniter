@@ -158,9 +158,7 @@
         <input type="checkbox" id="colors">
         <label for="colors">Colors</label>
       </div>
-      
-      <br>
-
+  
       <div class="checkbox">
         <label for="abc">Size</label>
           <select name="abc" id="qual">
@@ -168,13 +166,6 @@
             <option value="1">Medium</option>  
             <option value="2">Large</option>
           </select>
-      </div>
-      <div class="checkbox">
-        <label for="API">API</label>
-        <select name="api" id="api">
-          <option value="LEONARDO">LEONARDO</option> 
-
-        </select>
       </div>
 
       <div class="checkbox">
@@ -357,7 +348,7 @@ function vary(){
 
   var photoeffectsList = [];
     photoeffectsLoad();
-    async function photoEffectsLoad() {
+    async function photoeffectsLoad() {
   try {
     const response = await fetch('photoeffects3.txt');
     const data = await response.text();
