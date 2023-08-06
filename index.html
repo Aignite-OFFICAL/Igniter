@@ -104,10 +104,7 @@
         <input type="checkbox" id="animals">
         <label for="animals">Animals</label>
       </div>
-      <div class="checkbox">
-        <input type="checkbox" id="environment">
-        <label for="environment">Environment</label>
-      </div>
+      
       <div class="checkbox">
         <input type="checkbox" id="heroes" name="heroes" value="heroes">
         <label for="heroes">Hero List</label>
@@ -622,9 +619,7 @@ function generatePrompt() {
   if (document.getElementById("animals").checked) {
     promp += animalsList[Math.floor(Math.random() * animalsList.length)] + ", ";
   }
-  if (document.getElementById("environment").checked) {
-    promp += environmentList[Math.floor(Math.random() * environmentList.length)] + ", ";
-  }
+  
   if (document.getElementById("animeCharacters").checked) {
   promp += animeCharacterList[Math.floor(Math.random() * animeCharacterList.length)] + ", ";
   }
