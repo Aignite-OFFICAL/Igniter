@@ -379,6 +379,16 @@ function vary(){
  }
     
   const artistsList = [];
+    artistLoad();
+      async function artistLoad() {
+  try {
+    const response = await fetch('artists3.txt');
+    const data = await response.text();
+    artistsList = data.trim().split('\n');
+  } catch (error) {
+    alert('Error artists txt:'+error);
+  }
+ }
 
   const colorsList = [];
   const animeList = [];
