@@ -355,15 +355,15 @@ function vary(){
   }
  }
 
-  var photoEffectsList = [];
-    photoEffectsLoad();
+  var photoeffectsList = [];
+    photoeffectsLoad();
     async function photoEffectsLoad() {
   try {
-    const response = await fetch('photoEffects3.txt');
+    const response = await fetch('photoeffects3.txt');
     const data = await response.text();
-    photoEffectsList = data.trim().split('\n');
+    photoeffectsList = data.trim().split('\n');
   } catch (error) {
-    alert('Error photo txt:'+error);
+    alert('Error photoeffects txt:'+error);
   }
  }
   const qualityModifiersList = [];
