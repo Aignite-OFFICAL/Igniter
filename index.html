@@ -360,7 +360,7 @@ function vary(){
    qualityLoad();
   async function qualityLoad() {
   try {
-    const response = await fetch('qualitymodifiers3.txt');
+    const response = await fetch('quality.txt');
     const data = await response.text();
     qualityModifiersList = data.trim().split('\n');
   } catch (error) {
