@@ -355,13 +355,23 @@ function vary(){
   }
  }
 
-  const photoEffectsList = [];
+  var photoEffectsList = [];
+    photoEffectsLoad();
+    async function animalsLoad() {
+  try {
+    const response = await fetch('photoEffects3.txt');
+    const data = await response.text();
+    animalsList = data.trim().split('\n');
+  } catch (error) {
+    alert('Error photo txt:'+error);
+  }
+ }
   const qualityModifiersList = [];
     
   const artStyleList = [];
     
   const artistsList = [];
-  const abcList = [];
+
   const colorsList = [];
   const animeList = [];
   const movieList = [];
