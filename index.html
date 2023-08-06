@@ -477,9 +477,9 @@ function vary(){
     comicstyleLoad();
   async function comicstyleLoad() {
   try {
-    const response = await fetch('comicstyles3.txt');
+    const response = await fetch('comicstyle3.txt');
     const data = await response.text();
-    comicStylesList = data.trim().split('\n');
+    comicStyleList = data.trim().split('\n');
   } catch (error) {
     alert('Error comic Styles txt:'+error);
   }
