@@ -71,3 +71,123 @@ Grainy
 Noisy
 HDR
 Sharp
+Tilt-shift
+Fisheye
+Double exposure
+Light painting
+Slow motion
+Timelapse
+Stop motion
+Bullet time
+Long exposure
+Bokeh
+Light trails
+Forced perspective
+Infrared
+Night vision
+Thermal imaging
+Tonal inversion
+High dynamic range
+Panorama
+Zoom burst
+Focus stacking
+Motion blur
+Orton effect
+Lens flare
+Prism effect
+Kaleidoscope effect
+Starburst filter
+Diffraction spikes
+Chromatic aberration
+Glitch effect
+Datamoshing
+Pixel sorting
+Slit-scan
+Schlieren photography
+GoPro effect
+Lens whacking
+Kirlian photography
+Mirroring
+Multiple exposure collage
+Frederic Effect
+Harmonography
+Schlieren photography
+Bullet time
+Light painting
+Focus stacking
+Tilt shift
+Infrared
+High speed photography
+Timelapse
+HDR
+Slit-scan photography
+Streak photography
+Stereoscopic 3D
+Lenticular printing
+Bullet time
+GoPro Effect
+Bokeh
+Light painting
+Orton effect
+Prism photography
+Kaleidoscope effect
+Star filter
+Chromatic aberration
+Glitch effect
+Datamoshing
+Slit scan photography
+Bullet time
+Multiple exposure
+Light painting
+GoPro effect
+Bokeh
+Timelapse
+High speed photography
+Infrared photography
+Tilt-shift
+HDR
+Star trails
+Light painting
+Bullet time
+Slit-scan photography
+Multiple exposure
+Streak photography
+GoPro effect
+Bokeh
+Orton effect
+Prism photography
+Kaleidoscope effect
+Tilt-shift
+Timelapse
+HDR
+Star trails
+Multiple exposure
+Bullet time
+Slit-scan
+GoPro effect
+Kaleidoscope effect
+Tilt-shift
+Timelapse
+HDR
+Star trails
+Multiple exposure
+Bullet time
+Slit-scan
+Streak photography
+GoPro effect
+Chromatic aberration
+Glitch effect
+Datamoshing
+Multiple exposure
+Light painting
+Bokeh
+Orton effect
+Tilt-shift
+Timelapse
+HDR
+Bullet time
+Star trails
+Streak photography
+Slit-scan
+GoPro effect
+Kaleidoscope effect
