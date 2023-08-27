@@ -1,4 +1,129 @@
-Photorealistic
+Cel-shading
+Chiaro-scuro
+Chiaroscuro woodcut
+Cinematography  
+Cinerama
+Cinemiracle 
+Cinerama
+Kinopanorama
+Circle-vision 360
+Computography
+Computer art  
+Constructivism 
+Contemporary realism
+Cross-hatching
+Cubism
+Cubo-Futurism
+Cyclograph
+Dada
+De-collage
+De Stijl
+Decalcomania
+Decollage
+Der Blaue Reiter  
+Die Brücke
+Digital art
+Divisionism  
+Dot and line work
+Drawing
+École de Pont-Aven 
+Ecole de Paris
+E imprint
+Egg tempera
+Electronic art
+Environmental art
+Erotic art
+Etching
+Expressionism
+Faktura  
+Fauvism
+Figuration Libre
+Found art
+Fresco
+Frottage
+Futurism
+Generative art 
+Geometric abstraction
+Gesso
+Graffiti
+Graphic art
+Grisaille
+Grotesque
+Group of Seven
+Happening
+Hard-edge painting 
+Happening
+Impasto
+Impressionism 
+Incoherents
+Interactive art 
+Intermedia
+Internet art
+Kinetic art
+Land art
+Language of Vision
+Letterist International  
+Light art
+Lithography
+Lyrical Abstraction
+Mail art 
+Mathematical art
+Mezzotint
+Minimalism
+Mobile
+Modern art
+Modernism
+De Stijl
+Music visualization
+Neo-conceptual
+Neo-Dada
+Neo-expressionism
+Neo-primitivism
+Net art
+New media art
+Op art
+Orphism
+Outsider art
+Painting
+Performance art
+Photography
+Photorealism
+Pixel art 
+Pointillism
+Pop art 
+Postminimalism
+Postmodern art 
+Precisionism
+Pre-Raphaelite Brotherhood  
+Printmaking
+Proto-Cubism  
+Purism 
+Rayonism 
+Realism 
+Renaissance  
+Rococo
+Romanticism
+Samikshavad
+Stuckism
+Surrealism
+Sound art 
+Suprematism
+Synchromism 
+Systems art
+Tachisme
+Technique
+Action painting
+Art fabrication
+Avant-garde 
+Biennais
+Readymades
+Television 
+Texturology
+Tonalism
+Video art 
+Visionary
+Visual arts
+VorticismPhotorealistic
 Stylized
 Painterly
 Cartoon
