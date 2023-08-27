@@ -1,3 +1,114 @@
+Photorealistic
+Stylized
+Painterly
+Cartoon
+Cel shading
+Low poly
+Pixel art
+Voxel
+Vector
+Line art
+Ink wash
+Crosshatching
+Pointillism
+Impressionist 
+Expressionist
+Cubist
+Fauvist 
+Pop art
+Psychedelic  
+Abstraction
+Surrealism
+Symbolism
+Primitivism
+Naive art
+Stuckism
+Photomontage
+Dada
+Futurism
+Suprematism
+Constructivism
+De Stijl
+Art Nouveau
+Art Deco
+Bauhaus
+Minimalism
+Hard-edge painting
+Lyrical abstraction
+Tachisme
+COBRA
+Neo-Dada
+Post-painterly abstraction  
+Op art
+Photorealism
+Hyperrealism 
+Synthetic cubism
+Precisionism
+New objectivity
+Scuola romana
+Social realism
+Socialist realism
+Metaphysical art
+Arte Povera
+Neo-expressionism
+Bad painting
+Graffiti
+Neo pop  
+Video art
+Digital art 
+Systems art
+Light art 
+Land art
+Performance art
+Lenticular  
+Holographic
+Volumetric
+Stereoscopic
+Anaglyph 
+Parallax
+Multiview
+CAVE
+Augmented reality 
+Virtual reality
+XR
+WebGL
+Ray tracing
+Path tracing
+Rasterization
+Scanline
+2D
+3D
+Isometric
+Top-down perspective
+Side-scrolling
+Texture mapping
+bump mapping
+Parallax mapping
+Displacement mapping  
+Fogging
+Volumetric lighting
+Global illumination
+Ambient occlusion 
+Motion blur
+Depth of field  
+Bloom  
+Lens flare  
+Chromatic aberration
+Tilt shift
+Film grain
+Vignetting
+Glitch art
+Datamoshing
+Deep learning
+GAN  
+Photogrammetry
+LIDAR
+8K
+16K
+Procedural
+Fractal
+Generative
+AI art
 Refraction
 Mirror
 Distortion
