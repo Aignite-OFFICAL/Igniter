@@ -79,4 +79,280 @@ Tchotchke
 Oddity
 Curiosity
 Rarity
+chair
+table 
+lamp
+desk
+bed
+couch
+tv
+phone
+computer
+mouse
+keyboard
+monitor
+printer
+scanner
+speakers
+microwave
+refrigerator
+freezer
+oven
+stove
+toaster
+coffee maker
+blender
+food processor
+dishwasher  
+washing machine
+dryer
+vacuum
+broom
+mop
+bucket
+plunger
+wrench   
+hammer
+screwdriver
+drill 
+saw
+pliers
+scissors    
+knife
+fork
+spoon
+plate
+bowl
+cup 
+glass
+bottle
+can
+trash can
+mailbox
+door
+window
+curtains
+pillow
+blanket
+sheet
+mattress
+alarm clock
+wallet
+purse
+backpack
+suitcase
+calendar
+clock
+watch
+necklace
+ring
+earrings
+bracelet
+glasses
+comb
+brush
+mirror
+toothbrush 
+soap
+shampoo
+lotion
+perfume
+tissue
+towel
+robe
+slippers
+shoe
+sneaker
+shirt
+pants
+skirt
+dress 
+belt
+tie
+jacket
+coat
+boot
+glove
+scarf 
+hat
+sunglasses
+umbrella
+flashlight
+batteries
+outlet
+switch
+light bulb  
+poster
+painting
+sculpture
+vase
+flower
+candle 
+book  
+pen
+pencil
+eraser
+ruler
+notebook
+binder
+calculator
+stapler 
+tape
+paper clip 
+rubber band
+box  
+basket 
+bag 
+envelope  
+stamp
+key
+lock
+hinge
+doorknob
+cabinet
+drawer
+shelf
+picture frame
+mirror
+rug  
+carpet
+tile
+wallpaper   
+outlet
+switch
+thermostat
+air conditioner
+heater
+fan
+light
+circuit breaker
+socket
+wire
+pipe
+faucet
+sink
+toilet
+bathtub
+shower  
+towel rack
+soap dish
+trash can
+plunger 
+mop
+broom
+vacuum
+duster
+sponge   
+detergent 
+bleach
+softener
+scrub brush
+bucket
+hose
+ladder
+rake 
+shovel
+hoe
+trowel 
+shears  
+sprinkler
+fertilizer
+pot  
+planter
+trellis  
+stake 
+watering can
+seeds
+soil
+rock 
+wood  
+brick  
+nail 
+screw
+bolt  
+washer 
+paint 
+sealant
+insulation  
+stud
+joist  
+plywood
+drywall
+concrete  
+gravel  
+mortar  
+trowel
+level
+square  
+tape measure  
+hammer
+nails
+screws  
+wrench 
+pliers
+screwdriver
+saw
+drill
+utility knife
+putty knife 
+caulk  
+caulk gun 
+paintbrush
+roller
+drop cloth 
+sawhorse 
+wheelbarrow  
+jack
+jack stand
+ramp
+dolly  
+pulley
+winch  
+come-along
+bungee cord 
+rope
+chain  
+ratchet strap 
+tarp  
+compressor  
+air hose  
+impact wrench  
+breaker bar  
+socket set  
+funnel 
+oil filter wrench
+oil  
+trimmer line  
+sweeper  
+mower  
+trimmer  
+blower  
+chainsaw  
+pole saw  
+hedge trimmer  
+axe  
+shovel  
+rake  
+hoe  
+cultivator  
+spade  
+trowel  
+pruners  
+lopper  
+edger  
+leaf blower  
+mower  
+auger  
+post hole digger  
+tamper  
+nails  
+screws  
+bolts  
+nuts  
+washers   
+wire  
+cable  
+rope  
+chain  
+bungee cord
 Unique
