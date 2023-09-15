@@ -7,12 +7,23 @@
     <style>
       body {
         font-size: 22px;
+        display: flex;
       }
       
-      .checkbox-container {
+      .left-container {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .right-container {
+        flex: 1;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .checkbox-container {
         margin-bottom: 1rem;
       }
       
@@ -24,43 +35,32 @@
         margin: 0.5rem;
       }
 
-      .button-container {
-        display: flex;
-        align-items: center;
-        margin: 1rem;
+      .text-area-container {
+        margin-bottom: 1rem;
       }
 
-      .prompt {
-        background-color: #102010;
-        color: #ECE49C;
-        font-family: "Montserrat";
-        font-size: 2rem;
-        width: 900px;
-        height: 140px;
-        display: flex;
-        margin: 1rem;
+      #urltext {
+        width: 100%;
+        padding: 0.5rem;
       }
 
-      .donation-button {
-        background-color: black;
-        color: #FFD700;
-        font-weight: bold;
-        padding: 8px 4px;
-        border-radius: 5px;
-        border: 1px solid #DC143C;
-        margin: 1rem 0 2rem 0;
-        font-size: 1rem;
+      .image-box {
+        border: 2px solid #d3d3d3;
+        margin: 0.5rem;
       }
 
-      .container {
-        display: flex;
-        flex-direction: column;
-         align-items: center;
-        justify-content: center;
-        text-align: center;}
+      .canvas {
+        width: 100px;
+        height: 100px;
+      }
 
+      .canvas-small {
+        width: 100px;
+        height: 20px;
+        border: 2px solid #f393d3;
+      }
     
-       .background-image {
+      .background-image {
         background-image: url("lv_0_20230826132003.gif");
         background-size: cover;
         background-position: center;
@@ -74,148 +74,96 @@
     </style>
   </head>
   <body>
-    <canvas id="vCanvas1" width="100" height="20" style="border:2px solid #f393d3"></canvas>
-    <canvas id="vCanvas2" width="100" height="20" style="border:2px solid #f393d3"></canvas>
-    <canvas id="vCanvas3" width="100" height="20" style="border:2px solid #f393d3"></canvas>
-    <canvas id="vCanvas4" width="100" height="20" style="border:2px solid #f393d3"></canvas>
-    <canvas id="vCanvas5" width="100" height="20" style="border:2px solid #f393d3"></canvas>
-    <br>
-    <canvas id="Canvas1" width="100" height="100" style="border:2px solid #d3d3d3"></canvas>
-    <canvas id="Canvas2" width="100" height="100" style="border:2px solid #d3d3d3"></canvas>
-    <canvas id="Canvas3" width="100" height="100" style="border:2px solid #d3d3d3"></canvas>
-    <canvas id="Canvas4" width="100" height="100" style="border:2px solid #d3d3d3"></canvas>
-    <canvas id="Canvas5" width="100" height="100" style="border:2px solid #d3d3d3"></canvas>
-    <br>
- 
-    <textarea name="text" id="urltext" cols="80" rows="1"></textarea>
-    <br>
-    <br>
-   <a href="https://aiartus.github.io/Instructions">Instructions Guide</a>
-    <br>
-    <div class="checkbox-container">
-      
-      <div class="checkbox">
-        <input type="checkbox" id="prompts">
-        <label for="prompts">Prompts</label>
+    <div class="left-container">
+      <div class="checkbox-container">
+        <div class="checkbox">
+          <input type="checkbox" id="prompts">
+          <label for="prompts">Prompts</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="objects">
+          <label for="objects">Objects</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="animals">
+          <label for="animals">Animals</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="heroes" name="heroes" value="heroes">
+          <label for="heroes">Hero List</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="animeCharacters" name="animeCharacters">
+          <label for="animeCharacters">Anime Character</label>  
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="anime" name="anime">
+          <label for="anime">Anime</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="actors" name="actors">
+          <label for="actors">Actor</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="movies" name="movies">
+          <label for="movies">Movie</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="comics" name="comics">
+          <label for="comics">Comic</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="comicStyles" name="comicStyles">
+          <label for="comicStyles">Comic Style</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="photo_effects">
+          <label for="photo_effects">Photo Effects</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="render_type">
+          <label for="render_type">Render Type</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="art_style">
+          <label for="art_style">Art Styles</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="artists">
+          <label for="artists">Artists</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" id="colors">
+          <label for="colors">Colors</label>
+        </div>
       </div>
-      <div class="checkbox">
-        <input type="checkbox" id="objects">
-        <label for="objects">Objects</label>
+      <div class="text-area-container">
+        <textarea name="text" id="urltext" cols="80" rows="1"></textarea>
       </div>
-      <div class="checkbox">
-        <input type="checkbox" id="animals">
-        <label for="animals">Animals</label>
-      </div>
-      
-      <div class="checkbox">
-        <input type="checkbox" id="heroes" name="heroes" value="heroes">
-        <label for="heroes">Hero List</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" id="animeCharacters" name="animeCharacters">
-        <label for="animeCharacters">Anime Character</label>  
-      </div>   
-      <div class="checkbox">
-        <input type="checkbox" id="anime" name="anime">
-        <label for="anime">Anime</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" id="actors" name="actors">
-        <label for="actors">Actor</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" id="movies" name="movies">
-        <label for="movies">Movie</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" id="comics" name="comics">
-        <label for="comics">Comic</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" id="comicStyles" name="comicStyles">
-        <label for="comicStyles">Comic Style</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" id="photo_effects">
-        <label for="photo_effects">Photo Effects</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" id="render_type">
-        <label for="render_type">Render Type</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" id="art_style">
-        <label for="art_style">Art Styles</label>
-      </div>
-
-      <div class="checkbox">
-        <input type="checkbox" id="artists">
-        <label for="artists">Artists</label>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" id="colors">
-        <label for="colors">Colors</label>
-      </div>
-      
-      <div class="checkbox">
-        <label for="abc">Size</label>
-          <select name="abc" id="qual">
-            <option value=".5">Small</option>
-            <option value="1">Medium</option>  
-            <option value="2">Large</option>
-            <option value="3">1536</option>
-          </select>
-      </div>
-      <div class="checkbox">
-        <label for="model">Model</label>
-          <select name="model" id="model">
-            <option value="b820ea11-02bf-4652-97ae-9ac0cc00593d">SD</option>
-            <option value="e5a291b6-3990-495a-b1fa-7bd1864510a6">Pixel</option>
-            <option value="5fdadebb-17ae-472c-bf76-877e657f97de">Creatures</option>
-            <option value="d69c8273-6b17-4a30-a13e-d6637ae1c644">3D</option>
-            <option value="ac614f96-1082-45bf-be9d-757f2d31c174">DreamShaper v7</option>
-            <option value="17e4edbf-690b-425d-a466-53c816f0de8a">Vintage</option>
-            <option value="4b2e0f95-f15e-48d8-ada3-c071d6104db8">Xmas stickers</option>
-            <option value="e316348f-7773-490e-adcd-46757c738eb7">Absolute Reality v1.6</option>
-          </select>
-      </div>
-      
-      <div class="checkbox">
-        <label for="magic">Magic</label>
-        <select name="magic" id="mag">
-          <option value="false">false</option> 
-          <option value="true">true</option>
-        </select>
-      </div>
-      
-      <div class="checkbox">
-        <label for="tile">Tiling</label>
-        <select name="tile" id="til">
-          <option value="false">false</option> 
-          <option value="true">true</option>
-        </select>
-      </div>
-
+      <a href="https://aiartus.github.io/Instructions">Instructions Guide</a>
     </div>
-
-    <div class="container">
-      <div class="background-image"></div>
-      <div id="prompt" contenteditable="true" class="prompt"></div>
-        <div class="flex3">
-        <button id="generate-button">Generate</button>
-        <button id="copy-button">Copy</button>
-        <button id="url-button">Get Image</button>
+    <div class="right-container">
+      <div class="image-box">
+        <canvas id="Canvas1" class="canvas"></canvas>
+        <canvas id="vCanvas1" class="canvas-small"></canvas>
       </div>
-       <div class="checkbox">
-        <label for="img2">Img2Img</label>
-          <select name="img2" id="im2">
-            <option value="">None</option>
-            <option value="1">1</option>  
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
+      <div class="image-box">
+        <canvas id="Canvas2" class="canvas"></canvas>
+        <canvas id="vCanvas2" class="canvas-small"></canvas>
       </div>
+      <div class="image-box">
+        <canvas id="Canvas3" class="canvas"></canvas>
+        <canvas id="vCanvas3" class="canvas-small"></canvas>
+      </div>
+      <div class="image-box">
+        <canvas id="Canvas4" class="canvas"></canvas>
+        <canvas id="vCanvas4" class="canvas-small"></canvas>
+      </div>
+      <div class="image-box">
+        <canvas id="Canvas5" class="canvas"></canvas>
+        <canvas id="vCanvas5" class="canvas-small"></canvas>
+      </div>
+    </div>
       
       <div id="donation-button" class="donation-button">Donations</div>
     </div>
