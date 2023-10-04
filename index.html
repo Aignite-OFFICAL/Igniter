@@ -187,9 +187,10 @@
           <option value="true">true</option>
         </select>
 
+       <div>
         <div class="checkbox">
-        <label for="Photo Realism">Photoreal/label>
-        <select name="PhotoReal" id="real">
+        <label for="Photo Realism">rea</label>
+        <select name="Photoreal" id="rea">
           <option value="false">false</option> 
           <option value="true">true</option>
         </select>
@@ -268,7 +269,7 @@
     var varyStr="Upscale"
     
    var magicSet=false
-    
+   var realSet=false
     img.onload = function(){ct1.drawImage(img, 0, 0,size,size)}
     img2.onload = function(){ct2.drawImage(img2, 0, 0,size,size)}
     img3.onload = function(){ct3.drawImage(img3, 0, 0,size,size)}
@@ -653,12 +654,8 @@ magicSet=false
    tileSet=false
  if(document.getElementById("til").value=='true')
     {tileSet=true}
- magicSet=false
- if(document.getElementById("mag").value=='true')
-    {magicSet=true}
-   tileSet=false
- if(document.getElementById("til").value=='true')
-    {tileSet=true}
+ if(document.getElementById("rea").value=='true')
+    {reaSet=true}
  
  ct1.drawImage(waiting, 0,0,100,100,0,0,70,70);
  if(document.getElementById("qual").value==".5"){leoWait=40, dims=512}
@@ -685,7 +682,7 @@ if(document.getElementById("qual").value=="3" ){leoWait=50, dims=1536}
   body: JSON.stringify({prompt: promp,
   modelId: modl,
   width: dims, height: dims,
-  photoReal: PhotorealismSet,                     
+  photoReal: reaSet,                     
   init_generation_image_id: img2img,
   tiling: tileSet,                      
   promptMagic: magicSet,
@@ -707,6 +704,11 @@ fetch('https://cloud.leonardo.ai/api/rest/v1/generations', option1)
 
 function leoTimer(){
  if(magicSet==true){
+ ct1.fillRect(Math.random()*size,Math.random()*size,3,3) }
+  if(leoTime<leoWait+10*reWait){ct1.fillRect(0,.7*size,.004*leoTime*size,.2*size); leoTime++;setTimeout(leoTimer,100);return}
+
+function leoTimer(){
+ if(reaSet==true){
  ct1.fillRect(Math.random()*size,Math.random()*size,3,3) }
   if(leoTime<leoWait+10*reWait){ct1.fillRect(0,.7*size,.004*leoTime*size,.2*size); leoTime++;setTimeout(leoTimer,100);return}
   
