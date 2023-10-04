@@ -650,10 +650,10 @@ if(document.getElementById("qual").value=="3" ){leoWait=50, dims=1536}
   body: JSON.stringify({prompt: promp,
   modelId: modl,
   width: dims, height: dims,
-  init_generation_image_id: img2img,
-  tiling: tileSet,                      
-  promptMagic: magicSet,
   photoReal": true,
+  init_generation_image_id: img2img,
+  tiling: tileSet,                     
+  promptMagic: magicSet,
   scheduler: "LEONARDO", num_inference_steps: 30, sd_version: 'v2'})
 };
 leo=""
