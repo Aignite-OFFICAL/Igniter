@@ -186,6 +186,12 @@
           <option value="false">false</option> 
           <option value="true">true</option>
         </select>
+        <div class="checkbox">
+        <label for="Photo Realism">Magic</label>
+        <select name="magic" id="mag">
+          <option value="false">false</option> 
+          <option value="true">true</option>
+        </select>
       </div>
       
       <div class="checkbox">
@@ -640,7 +646,12 @@ function leonardo(){
  leoTime++
  promp= promptDiv.innerHTML
 
-
+magicSet=false
+ if(document.getElementById("mag").value=='true')
+    {magicSet=true}
+   tileSet=false
+ if(document.getElementById("til").value=='true')
+    {tileSet=true}
  magicSet=false
  if(document.getElementById("mag").value=='true')
     {magicSet=true}
@@ -673,7 +684,7 @@ if(document.getElementById("qual").value=="3" ){leoWait=50, dims=1536}
   body: JSON.stringify({prompt: promp,
   modelId: modl,
   width: dims, height: dims,
-  photoReal: true,                     
+  photoReal: PhotorealismSet,                     
   init_generation_image_id: img2img,
   tiling: tileSet,                      
   promptMagic: magicSet,
