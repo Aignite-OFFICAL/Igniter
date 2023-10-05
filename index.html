@@ -268,6 +268,7 @@
     var img2img
     var leoTime=0,leoWait, leoCredits, leoCredMax
     var varyStr="Upscale"
+    
    var magicSet=false
    var alcSet=false
     img.onload = function(){ct1.drawImage(img, 0, 0,size,size)}
@@ -690,7 +691,6 @@ if(document.getElementById("qual").value=="3" ){leoWait=50, dims=1536}
   tiling: tileSet,                      
   promptMagic: magicSet,
   promptMagicVersion: "V3",
-  photoReal: true,
   alchemy: alcSet,
   scheduler: "LEONARDO", num_inference_steps: 30, sd_version: 'v2'})
 };
