@@ -742,7 +742,19 @@ fetch('https://cloud.leonardo.ai/api/rest/v1/generations', option1)
 }
 
 function leoTimer(){
- if(magicSet==true){
+   if(magicSet==true){
+ ct1.fillRect(Math.random()*size,Math.random()*size,3,3) }
+  if(leoTime<leoWait+10*reWait){ct1.fillRect(0,.7*size,.004*leoTime*size,.2*size); leoTime++;setTimeout(leoTimer,100);return}
+
+ if(mag2Set==true){
+ ct1.fillRect(Math.random()*size,Math.random()*size,3,3) }
+  if(leoTime<leoWait+10*reWait){ct1.fillRect(0,.7*size,.004*leoTime*size,.2*size); leoTime++;setTimeout(leoTimer,100);return}
+
+  if(mag3Set==true){
+ ct1.fillRect(Math.random()*size,Math.random()*size,3,3) }
+  if(leoTime<leoWait+10*reWait){ct1.fillRect(0,.7*size,.004*leoTime*size,.2*size); leoTime++;setTimeout(leoTimer,100);return}
+  
+ if(alcSet==true){
  ct1.fillRect(Math.random()*size,Math.random()*size,3,3) }
   if(leoTime<leoWait+10*reWait){ct1.fillRect(0,.7*size,.004*leoTime*size,.2*size); leoTime++;setTimeout(leoTimer,100);return}
 
