@@ -186,24 +186,8 @@
           <option value="false">false</option> 
           <option value="true">true</option>
         </select>
-       </div>
-
-      <div class="checkbox">
-        <label for="magic">Magic2</label>
-        <select name="magic" id="mag2">
-          <option value="false">false</option> 
-          <option value="true">true</option>
-        </select>
-       </div>
-
-     <div class="checkbox">
-        <label for="magic">Magic3</label>
-        <select name="magic" id="mag3">
-          <option value="false">false</option> 
-          <option value="true">true</option>
-        </select>
-       </div>
-
+      </div>
+         
       <div class="checkbox">
         <label for="alchemy">Alchemy</label>
         <select name="alc" id="alc">
@@ -292,8 +276,6 @@
     var leoTime=0,leoWait, leoCredits, leoCredMax
     var varyStr="Upscale"
    var magicSet=false
-   var magic2Set=false
-   var magic3Set=false
    var alcSet=false
    var realSet=false
     img.onload = function(){ct1.drawImage(img, 0, 0,size,size)}
@@ -682,13 +664,7 @@ magicSet=false
     {tileSet=true}
 realSet=false
  if(document.getElementById("rea").value=='true')
-    {reaSet=true}
-magic2Set=false
- if(document.getElementById("mag2").value=='true')
-    {magic2Set=true}
-   tileSet=false
- if(document.getElementById("mag3").value=='true')
-    {magic3Set=true}
+    {reaSet=true} 
 alcSet=false
  if(document.getElementById("alc").value=='true')
     {alcSet=true}
@@ -721,8 +697,7 @@ if(document.getElementById("qual").value=="3" ){leoWait=50, dims=1536}
   init_generation_image_id: img2img,
   tiling: tileSet,                      
   promptMagic: magicSet,
-  promptMagicVersion: mag2Set,
-  promptMagicVersion: mag3Set,
+  promptMagicVersion: "V3",
   photoReal: realSet,
   alchemy: alcSet,
   scheduler: "LEONARDO", num_inference_steps: 30, sd_version: 'v2'})
