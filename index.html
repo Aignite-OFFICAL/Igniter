@@ -176,103 +176,79 @@
     </div>
     <div id="main-content" style="display: flex; flex-direction: column; align-items: center; padding: 2rem;">
         <textarea cols="80" id="urltext" name="text" rows="1" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; background-color: #333; color: white; border: 2px solid orange;"></textarea>
-        <div class="checkbox">
+        <div class="checkbox"><div id="main-content" style="display: flex; flex-direction: column; align-items: center; padding: 2rem;">
+    <textarea id="urltext" rows="1" style="width: 90%; padding: 10px; margin-bottom: 20px; background-color: #333333; color: white; border: 2px solid #FFCC00;"></textarea>
 
-<label for="abc" style="color: white;">Size</label>
-<select id="qual" name="abc">
-<option value=".5">Small</option>
-<option value="1">Medium</option>
-<option value="2">Large</option>
-<option value="3">1536</option>
-</select>
+    <!-- Settings Containers -->
+    <div class="settings" style="display: flex; justify-content: space-around; width: 100%; margin-bottom: 20px;">
+        <!-- Size Selection -->
+        <div style="flex: 1; text-align: center;">
+            <label for="qual" style="color: white; display: block; margin-bottom: 5px;">Size</label>
+            <select id="qual" name="abc" style="padding: 8px; width: 90%; border-radius: 5px;">
+                <option value=".5">Small</option>
+                <option value="1">Medium</option>
+                <option value="2">Large</option>
+                <option value="3">1536</option>
+            </select>
+        </div>
+        
+        <!-- Model Selection -->
+        <div style="flex: 1; text-align: center;">
+            <label for="model" style="color: white; display: block; margin-bottom: 5px;">Model</label>
+            <select id="model" name="model" style="padding: 8px; width: 90%; border-radius: 5px;">
+                <option value="b820ea11-02bf-4652-97ae-9ac0cc00593d">SD</option>
+                <option value="e5a291b6-3990-495a-b1fa-7bd1864510a6">Pixel</option>
+                <option value="5fdadebb-17ae-472c-bf76-877e657f97de">Creatures</option>
+                <option value="d69c8273-6b17-4a30-a13e-d6637ae1c644">3D</option>
+                <option value="ac614f96-1082-45bf-be9d-757f2d31c174">DreamShaper v7</option>
+                <option value="17e4edbf-690b-425d-a466-53c816f0de8a">Vintage</option>
+                <option value="4b2e0f95-f15e-48d8-ada3-c071d6104db8">Xmas stickers</option>
+                <option value="e316348f-7773-490e-adcd-46757c738eb7">Absolute Reality v1.6</option>
+            </select>
+        </div>
+
+        <!-- Magic Selection -->
+        <div style="flex: 1; text-align: center;">
+            <label for="mag" style="color: white; display: block; margin-bottom: 5px;">Magic</label>
+            <select id="mag" name="magic" style="padding: 8px; width: 90%; border-radius: 5px;">
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+            </select>
+        </div>
+
+        <!-- Tiling Selection -->
+        <div style="flex: 1; text-align: center;">
+            <label for="til" style="color: white; display: block; margin-bottom: 5px;">Tiling</label>
+            <select id="til" name="tile" style="padding: 8px; width: 90%; border-radius: 5px;">
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="right-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; width: 100%;">
+        <!-- Canvas elements for display -->
+        <canvas id="vCanvas1" style="border: 2px solid #FFD700; width: 20%; height: 100px;"></canvas>
+        <canvas id="vCanvas2" style="border: 2px solid #FFD700; width: 20%; height: 100px;"></canvas>
+        <canvas id="vCanvas3" style="border: 2px solid #FFD700; width: 20%; height: 100px;"></canvas>
+        <canvas id="vCanvas4" style="border: 2px solid #FFD700; width: 20%; height: 100px;"></canvas>
+        <canvas id="vCanvas5" style="border: 2px solid #FFD700; width: 20%; height: 100px;"></canvas>
+    </div>
+
+    <a href="https://aiartus.github.io/Instructions" style="background-color: #FFA500; color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 20px;">Instructions Guide</a>
+
+    <!-- Prompt and Interaction Buttons -->
+    <div class="container" style="margin-top: 20px; width: 100%;">
+        <div class="prompt" contenteditable="true" id="prompt" style="background-color: #333; color: white; padding: 10px; border-radius: 5px; margin-bottom: 10px; width: 90%;"></div>
+        <div class="flex3" style="display: flex; justify-content: space-around; width: 100%;">
+            <button id="generate-button" style="background-color: #FFA500; color: black; padding: 10px 20px; border-radius: 5px;">Get Prompt</button>
+            <button id="copy-button" style="background-color: #FFA500; color: black; padding: 10px 20px; border-radius: 5px;">Copy</button>
+            <button id="url-button" style="background-color: #FFA500; color: black; padding: 10px 20px; border-radius: 5px;">Get Image</button>
+        </div>
+        <div class="donation-button" id="donation-button" style="background-color: #000000; color: #FFD700; padding: 10px 20px; border-radius: 5px; margin-top: 10px;">Donations</div>
+    </div>
 </div>
-<div class="checkbox">
-<label for="model" style="color: white;">Model</label>
-<select id="model" name="model">
-<option value="b820ea11-02bf-4652-97ae-9ac0cc00593d">SD</option>
-<option value="e5a291b6-3990-495a-b1fa-7bd1864510a6">Pixel</option>
-<option value="5fdadebb-17ae-472c-bf76-877e657f97de">Creatures</option>
-<option value="d69c8273-6b17-4a30-a13e-d6637ae1c644">3D</option>
-<option value="ac614f96-1082-45bf-be9d-757f2d31c174">DreamShaper v7</option>
-<option value="17e4edbf-690b-425d-a466-53c816f0de8a">Vintage</option>
-<option value="4b2e0f95-f15e-48d8-ada3-c071d6104db8">Xmas stickers</option>
-<option value="e316348f-7773-490e-adcd-46757c738eb7">Absolute Reality v1.6</option>
-</select>
-</div>
-<div class="checkbox">
-<label for="magic" style="color: white;">Magic</label>
-<select id="mag" name="magic">
-<option value="false">false</option>
-<option value="true">true</option>
-</select>
-</div>
-<div class="checkbox">
-<label for="tile" style="color: white;">Tiling</label>
-<select id="til" name="tile">
-<option value="false">false</option>
-<option value="true">true</option>
-</select>
-</div>
-</div></div><div id="right-container" style="flex: 1; display: flex; flex-wrap: wrap; justify-content: space-between;"><canvas height="20" id="vCanvas1" style="border:2px solid #f393d3" width="100"></canvas><canvas height="20" id="vCanvas2" style="border:2px solid #f393d3" width="100"></canvas><canvas height="20" id="vCanvas3" style="border:2px solid #f393d3" width="100"></canvas><canvas height="20" id="vCanvas4" style="border:2px solid #f393d3" width="100"></canvas><canvas height="20" id="vCanvas5" style="border:2px solid #f393d3" width="100"></>
-<br/>
-<br/>
-<br/>
-<br/>
-<a href="https://aiartus.github.io/Instructions" style="
-    background-color: orange;
-    color: black;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-">Instructions Guide</a>
-<br/>
-<div class="container">
-<div class="background-image"></div>
-<div class="prompt" contenteditable="true" id="prompt"></div>
-<div class="flex3">
-<button id="generate-button" style="
-    background-color: orange;
-    color: black;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-">GetPrompt</button>
-<button id="copy-button" style="
-    background-color: orange;
-    color: black;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-">Copy</button>
-<button id="url-button" style="
-    background-color: orange;
-    color: black;
-    border: none;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-">GetImage</button>
-</div>
-<div class="checkbox">
-<label for="img2">Img2Img</label>
-<select id="im2" name="img2">
-<option value="">None</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-</select>
-</div>
-<div class="donation-button" id="donation-button">Donations</div>
-</div>
-<script>
+
 fetch('describing.txt')
     .then(response => response.text())
     .then(data => {
