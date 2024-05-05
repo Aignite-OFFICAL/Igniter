@@ -23,48 +23,56 @@
     <input id="artists" type="checkbox"/><label for="artists">Artists</label>
     <input id="colors" type="checkbox"/><label for="colors">Colors</label>
     <input id="describing" type="checkbox"/><label for="describing">Describing</label>
+<div class="checkbox-container">
+    <div class="checkbox">
+        <label for="qual">Size</label>
+        <select id="qual" name="abc">
+            <option value=".5">Small</option>
+            <option value="1">Medium</option>
+            <option value="2">Large</option>
+            <option value="3">1536</option>
+        </select>
+    </div>
+    <div class="checkbox">
+        <label for="model">Model</label>
+        <select id="model" name="model">
+            <option value="b820ea11-02bf-4652-97ae-9ac0cc00593d">SD</option>
+            <option value="e5a291b6-3990-495a-b1fa-7bd1864510a6">Pixel</option>
+            <option value="5fdadebb-17ae-472c-bf76-877e657f97de">Creatures</option>
+            <option value="d69c8273-6b17-4a30-a13e-d6637ae1c644">3D</option>
+            <option value="ac614f96-1082-45bf-be9d-757f2d31c174">DreamShaper v7</option>
+            <option value="17e4edbf-690b-425d-a466-53c816f0de8a">Vintage</option>
+            <option value="4b2e0f95-f15e-48d8-ada3-c071d6104db8">Xmas stickers</option>
+            <option value="e316348f-7773-490e-adcd-46757c738eb7">Absolute Reality v1.6</option>
+        </select>
+    </div>
+    <div class="checkbox">
+        <label for="mag">Magic</label>
+        <select id="mag" name="magic">
+            <option value="false">false</option>
+            <option value="true">true</option>
+        </select>
+    </div>
+    <div class="checkbox">
+        <label for="til">Tiling</label>
+        <select id="til" name="tile">
+            <option value="false">false</option>
+            <option value="true">true</option>
+        </select>
+    </div>
 </div>
-<div class="checkbox">
-<label for="abc" style="color: white;">Size</label>
-<select id="qual" name="abc">
-<option value=".5">Small</option>
-<option value="1">Medium</option>
-<option value="2">Large</option>
-<option value="3">1536</option>
-</select>
+<div id="right-container">
+    <canvas id="vCanvas1" class="visual-canvas"></canvas>
+    <canvas id="vCanvas2" class="visual-canvas"></canvas>
+    <canvas id="vCanvas3" class="visual-canvas"></canvas>
+    <canvas id="vCanvas4" class="visual-canvas"></canvas>
+    <canvas id="vCanvas5" class="visual-canvas"></canvas>
+    <canvas id="Canvas1" class="visual-canvas-large"></canvas>
+    <canvas id="Canvas2" class="visual-canvas-large"></canvas>
+    <canvas id="Canvas3" class="visual-canvas-large"></canvas>
+    <canvas id="Canvas4" class="visual-canvas-large"></canvas>
+    <canvas id="Canvas5" class="visual-canvas-large"></canvas>
 </div>
-<div class="checkbox">
-<label for="model" style="color: white;">Model</label>
-<select id="model" name="model">
-<option value="b820ea11-02bf-4652-97ae-9ac0cc00593d">SD</option>
-<option value="e5a291b6-3990-495a-b1fa-7bd1864510a6">Pixel</option>
-<option value="5fdadebb-17ae-472c-bf76-877e657f97de">Creatures</option>
-<option value="d69c8273-6b17-4a30-a13e-d6637ae1c644">3D</option>
-<option value="ac614f96-1082-45bf-be9d-757f2d31c174">DreamShaper v7</option>
-<option value="17e4edbf-690b-425d-a466-53c816f0de8a">Vintage</option>
-<option value="4b2e0f95-f15e-48d8-ada3-c071d6104db8">Xmas stickers</option>
-<option value="e316348f-7773-490e-adcd-46757c738eb7">Absolute Reality v1.6</option>
-</select>
-</div>
-<div class="checkbox">
-<label for="magic" style="color: white;">Magic</label>
-<select id="mag" name="magic">
-<option value="false">false</option>
-<option value="true">true</option>
-</select>
-</div>
-<div class="checkbox">
-<label for="tile" style="color: white;">Tiling</label>
-<select id="til" name="tile">
-<option value="false">false</option>
-<option value="true">true</option>
-</select>
-</div>
-</div></div><div id="right-container" style="flex: 1; display: flex; flex-wrap: wrap; justify-content: space-between;"><canvas height="20" id="vCanvas1" style="border:2px solid #f393d3" width="100"></canvas><canvas height="20" id="vCanvas2" style="border:2px solid #f393d3" width="100"></canvas><canvas height="20" id="vCanvas3" style="border:2px solid #f393d3" width="100"></canvas><canvas height="20" id="vCanvas4" style="border:2px solid #f393d3" width="100"></canvas><canvas height="20" id="vCanvas5" style="border:2px solid #f393d3" width="100"></canvas><canvas height="100" id="Canvas1" style="border:2px solid #d3d3d3" width="100"></canvas><canvas height="100" id="Canvas2" style="border:2px solid #d3d3d3" width="100"></canvas><canvas height="100" id="Canvas3" style="border:2px solid #d3d3d3" width="100"></canvas><canvas height="100" id="Canvas4" style="border:2px solid #d3d3d3" width="100"></canvas><canvas height="100" id="Canvas5" style="border:2px solid #d3d3d3" width="100"></canvas></div>
-<br/>
-<br/>
-<br/>
-<br/>
 
 <a href="https://aiartus.github.io/Instructions">Instructions Guide</a>
 
