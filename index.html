@@ -106,10 +106,78 @@
         }
     }
 </style>
-</head>
-<body style="background: linear-gradient(to bottom, black, orange, white);"><div id="checkboxes-container" style="flex: 1; padding-right: 2rem;"><input id="prompts" style="margin-right: 0.5rem;" type="checkbox"/><label for="prompts" style="color: white;">Prompts</label><input id="objects" style="margin-right: 0.5rem;" type="checkbox"/><label for="objects" style="color: white;">Objects</label><input id="animals" style="margin-right: 0.5rem;" type="checkbox"/><label for="animals" style="color: white;">Animals</label><input id="heroes" name="heroes" style="margin-right: 0.5rem;" type="checkbox" value="heroes"/><label for="heroes" style="color: white;">Hero List</label><input id="animeCharacters" name="animeCharacters" style="margin-right: 0.5rem;" type="checkbox"/><label for="animeCharacters" style="color: white;">Anime Character</label><input id="anime" name="anime" style="margin-right: 0.5rem;" type="checkbox"/><label for="anime" style="color: white;">Anime</label><input id="actors" name="actors" style="margin-right: 0.5rem;" type="checkbox"/><label for="actors" style="color: white;">Actor</label><input id="movies" name="movies" style="margin-right: 0.5rem;" type="checkbox"/><label for="movies" style="color: white;">Movie</label><input id="comics" name="comics" style="margin-right: 0.5rem;" type="checkbox"/><label for="comics" style="color: white;">Comic</label><input id="comicStyles" name="comicStyles" style="margin-right: 0.5rem;" type="checkbox"/><label for="comicStyles" style="color: white;">Comic Style</label><input id="photo_effects" style="margin-right: 0.5rem;" type="checkbox"/><label for="photo_effects" style="color: white;">Photo Effects</label><input id="render_type" style="margin-right: 0.5rem;" type="checkbox"/><label for="render_type" style="color: white;">Render Type</label><input id="art_style" style="margin-right: 0.5rem;" type="checkbox"/><label for="art_style" style="color: white;">Art Styles</label><input id="artists" style="margin-right: 0.5rem;" type="checkbox"/><label for="artists" style="color: white;">Artists</label><input id="colors" style="margin-right: 0.5rem;" type="checkbox"/><label for="colors" style="color: white;">Colors</label><input id="describing" type="checkbox"/><label for="describing">Describing</label></div><div id="main-content" style="flex: 2; padding-left: 2rem;"><textarea cols="80" id="urltext" name="text" rows="1" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; background-color: #333; color: white; border: 2px solid orange;"></textarea><div class="checkbox-container">
+<body style="background: linear-gradient(to bottom, #002244, #004488, #002244);">
+    <div id="checkboxes-container" style="display: flex; flex-wrap: wrap; justify-content: center; padding: 2rem;">
+        <!-- Individual checkboxes for various options -->
+        <div style="margin-right: 0.5rem;">
+            <input id="prompts" type="checkbox"/>
+            <label for="prompts" style="color: white;">Prompts</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="objects" type="checkbox"/>
+            <label for="objects" style="color: white;">Objects</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="animals" type="checkbox"/>
+            <label for="animals" style="color: white;">Animals</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="heroes" name="heroes" type="checkbox"/>
+            <label for="heroes" style="color: white;">Hero List</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="animeCharacters" name="animeCharacters" type="checkbox"/>
+            <label for="animeCharacters" style="color: white;">Anime Character</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="anime" name="anime" type="checkbox"/>
+            <label for="anime" style="color: white;">Anime</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="actors" name="actors" type="checkbox"/>
+            <label for="actors" style="color: white;">Actor</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="movies" name="movies" type="checkbox"/>
+            <label for="movies" style="color: white;">Movie</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="comics" name="comics" type="checkbox"/>
+            <label for="comics" style="color: white;">Comic</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="comicStyles" name="comicStyles" type="checkbox"/>
+            <label for="comicStyles" style="color: white;">Comic Style</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="photo_effects" type="checkbox"/>
+            <label for="photo_effects" style="color: white;">Photo Effects</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="render_type" type="checkbox"/>
+            <label for="render_type" style="color: white;">Render Type</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="art_style" type="checkbox"/>
+            <label for="art_style" style="color: white;">Art Styles</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="artists" type="checkbox"/>
+            <label for="artists" style="color: white;">Artists</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="colors" type="checkbox"/>
+            <label for="colors" style="color: white;">Colors</label>
+        </div>
+        <div style="margin-right: 0.5rem;">
+            <input id="describing" type="checkbox"/>
+            <label for="describing" style="color: white;">Describing</label>
+        </div>
+    </div>
+    <div id="main-content" style="display: flex; flex-direction: column; align-items: center; padding: 2rem;">
+        <textarea cols="80" id="urltext" name="text" rows="1" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem; background-color: #333; color: white; border: 2px solid orange;"></textarea>
+        <div class="checkbox">
 
-<div class="checkbox">
 <label for="abc" style="color: white;">Size</label>
 <select id="qual" name="abc">
 <option value=".5">Small</option>
