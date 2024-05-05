@@ -1,0 +1,104 @@
+/* General styling */
+body {
+    background: #0E0E2C; /* Dark blue background */
+    color: #FFFFFF; /* White text color */
+    font-family: 'Arial', sans-serif; /* Clean, simple font */
+}
+
+/* Header and title styling */
+h1 {
+    text-align: center;
+    color: #FFD700; /* Golden color for the title */
+}
+
+/* Button styling */
+button, .button {
+    background-color: #FF4B2B; /* Vibrant red background */
+    color: #FFFFFF; /* White text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .button:hover {
+    background-color: #FF416C; /* Lighter red on hover */
+}
+
+/* Dropdown styling */
+select {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 2px solid #FFD700; /* Golden border */
+    background-color: #222;
+    color: #FFD700;
+}
+
+/* Checkbox customization */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #FFD700; /* Golden background */
+    border: 2px solid #333; /* Dark border for contrast */
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 8px;
+    height: 8px;
+    background-color: #0E0E2C; /* Dark blue checkmark */
+}
+
+/* Container styling for layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.label {
+    margin-right: 10px;
+    color: #FFD700; /* Golden text for labels */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    select, button, .button {
+        width: 100%;
+    }
+}
+
+/* Keyframe animations for extra flair */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 1s ease-out;
+}
