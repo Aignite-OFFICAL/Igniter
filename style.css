@@ -1,0 +1,109 @@
+/* General styling */
+body {
+    background: #1A1A40; /* Deep blue background, adjusted to match */
+    color: #FFFFFF; /* White text color remains the same */
+    font-family: 'Arial', sans-serif; /* Retaining the clean, simple font */
+}
+
+/* Header and title styling */
+h1 {
+    text-align: center;
+    color: #FFD700; /* Golden color for the title is appropriate */
+}
+
+/* Button styling */
+button, .button {
+    background-color: #FF4B2B; /* Adjusted base color to match red buttons */
+    color: #FFFFFF; /* White text color */
+    border: none;
+    border-radius: 20px; /* More pronounced rounded corners */
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .button:hover {
+    background-color: #FF416C; /* Lighter red on hover, matches existing style */
+}
+
+/* Dropdown styling */
+select {
+    padding: 5px 15px;
+    border-radius: 20px; /* More pronounced rounded corners */
+    border: none; /* Removing border for a cleaner look */
+    background-color: #333333; /* Darker background for dropdown */
+    color: #FFD700; /* Golden text retains its style */
+}
+
+/* Checkbox customization */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #FFD700; /* Golden background */
+    border: none; /* Simplified with no border */
+    padding: 10px;
+    border-radius: 20px; /* More rounded corners for checkboxes */
+    display: inline-block;
+    position: relative;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "✓"; /* Using a checkmark symbol */
+    color: #1A1A40; /* Dark blue checkmark, visible against gold */
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    font-size: 16px; /* Larger checkmark for visibility */
+}
+
+#checkboxes-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Container and layout styling */
+.container {
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.label {
+    margin-right: 10px;
+    color: #FFD700; /* Golden text for labels, retains its style */
+}
+
+/* Enhancing responsiveness */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    select, button, .button {
+        width: 100%; /* Ensuring full width on smaller screens */
+    }
+}
+
+/* Keyframe animations for extra flair */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 1s ease-out;
+}
