@@ -1,38 +1,38 @@
 /* General styling */
 body {
-    background: #0E0E2C; /* Dark blue background */
-    color: #FFFFFF; /* White text color */
-    font-family: 'Arial', sans-serif; /* Clean, simple font */
+    background: #1A1A40; /* Deep blue background, adjusted to match */
+    color: #FFFFFF; /* White text color remains the same */
+    font-family: 'Arial', sans-serif; /* Retaining the clean, simple font */
 }
 
 /* Header and title styling */
 h1 {
     text-align: center;
-    color: #FFD700; /* Golden color for the title */
+    color: #FFD700; /* Golden color for the title is appropriate */
 }
 
 /* Button styling */
 button, .button {
-    background-color: #FF4B2B; /* Vibrant red background */
+    background-color: #FF4B2B; /* Adjusted base color to match red buttons */
     color: #FFFFFF; /* White text color */
     border: none;
-    border-radius: 5px;
+    border-radius: 20px; /* More pronounced rounded corners */
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 button:hover, .button:hover {
-    background-color: #FF416C; /* Lighter red on hover */
+    background-color: #FF416C; /* Lighter red on hover, matches existing style */
 }
 
 /* Dropdown styling */
 select {
     padding: 5px 15px;
-    border-radius: 5px;
-    border: 2px solid #FFD700; /* Golden border */
-    background-color: #222;
-    color: #FFD700;
+    border-radius: 20px; /* More pronounced rounded corners */
+    border: none; /* Removing border for a cleaner look */
+    background-color: #333333; /* Darker background for dropdown */
+    color: #FFD700; /* Golden text retains its style */
 }
 
 /* Checkbox customization */
@@ -40,24 +40,23 @@ input[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
     background-color: #FFD700; /* Golden background */
-    border: 2px solid #333; /* Dark border for contrast */
+    border: none; /* Simplified with no border */
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 20px; /* More rounded corners for checkboxes */
     display: inline-block;
     position: relative;
 }
 
 input[type="checkbox"]:checked::after {
-    content: "";
+    content: "✓"; /* Using a checkmark symbol */
+    color: #1A1A40; /* Dark blue checkmark, visible against gold */
     position: absolute;
-    left: 4px;
-    top: 4px;
-    width: 8px;
-    height: 8px;
-    background-color: #0E0E2C; /* Dark blue checkmark */
+    left: 3px;
+    top: 1px;
+    font-size: 16px; /* Larger checkmark for visibility */
 }
 
-/* Container styling for layout */
+/* Container and layout styling */
 .container {
     display: flex;
     flex-direction: column;
@@ -74,10 +73,10 @@ input[type="checkbox"]:checked::after {
 
 .label {
     margin-right: 10px;
-    color: #FFD700; /* Golden text for labels */
+    color: #FFD700; /* Golden text for labels, retains its style */
 }
 
-/* Responsiveness */
+/* Enhancing responsiveness */
 @media (max-width: 768px) {
     .row {
         flex-direction: column;
@@ -85,7 +84,7 @@ input[type="checkbox"]:checked::after {
     }
 
     select, button, .button {
-        width: 100%;
+        width: 100%; /* Ensuring full width on smaller screens */
     }
 }
 
