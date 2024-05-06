@@ -1,87 +1,92 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-<title>IdeaIgniter</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+    <title>IdeaIgniter</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div id="checkboxes-container">
-    <input id="prompts" type="checkbox"/><label for="prompts">Prompts</label>
-    <input id="objects" type="checkbox"/><label for="objects">Objects</label>
-    <input id="animals" type="checkbox"/><label for="animals">Animals</label>
-    <input id="heroes" name="heroes" type="checkbox"/><label for="heroes">Hero List</label>
-    <input id="animeCharacters" name="animeCharacters" type="checkbox"/><label for="animeCharacters">Anime Character</label>
-    <input id="anime" name="anime" type="checkbox"/><label for="anime">Anime</label>
-    <input id="actors" name="actors" type="checkbox"/><label for="actors">Actor</label>
-    <input id="movies" name="movies" type="checkbox"/><label for="movies">Movie</label>
-    <input id="comics" name="comics" type="checkbox"/><label for="comics">Comic</label>
-    <input id="comicStyles" name="comicStyles" type="checkbox"/><label for="comicStyles">Comic Style</label>
-    <input id="photo_effects" type="checkbox"/><label for="photo_effects">Photo Effects</label>
-    <input id="render_type" type="checkbox"/><label for="render_type">Render Type</label>
-    <input id="art_style" type="checkbox"/><label for="art_style">Art Styles</label>
-    <input id="artists" type="checkbox"/><label for="artists">Artists</label>
-    <input id="colors" type="checkbox"/><label for="colors">Colors</label>
-    <input id="describing" type="checkbox"/><label for="describing">Describing</label>
-<div class="checkbox-container">
-    <div class="checkbox">
-        <label for="qual">Size</label>
-        <select id="qual" name="abc">
-            <option value=".5">Small</option>
-            <option value="1">Medium</option>
-            <option value="2">Large</option>
-            <option value="3">1536</option>
-        </select>
+    <div id="checkboxes-container" class="container">
+        <!-- Checkbox inputs with labels styled with the CSS for checkboxes -->
+        <input id="prompts" type="checkbox"/><label for="prompts">Prompts</label>
+        <input id="objects" type="checkbox"/><label for="objects">Objects</label>
+        <input id="animals" type="checkbox"/><label for="animals">Animals</label>
+        <input id="heroes" type="checkbox"/><label for="heroes">Hero List</label>
+        <input id="animeCharacters" type="checkbox"/><label for="animeCharacters">Anime Character</label>
+        <input id="anime" type="checkbox"/><label for="anime">Anime</label>
+        <input id="actors" type="checkbox"/><label for="actors">Actor</label>
+        <input id="movies" type="checkbox"/><label for="movies">Movie</label>
+        <input id="comics" type="checkbox"/><label for="comics">Comic</label>
+        <input id="comicStyles" type="checkbox"/><label for="comicStyles">Comic Style</label>
+        <input id="photo_effects" type="checkbox"/><label for="photo_effects">Photo Effects</label>
+        <input id="render_type" type="checkbox"/><label for="render_type">Render Type</label>
+        <input id="art_style" type="checkbox"/><label for="art_style">Art Styles</label>
+        <input id="artists" type="checkbox"/><label for="artists">Artists</label>
+        <input id="colors" type="checkbox"/><label for="colors">Colors</label>
+        <input id="describing" type="checkbox"/><label for="describing">Describing</label>
     </div>
-    <div class="checkbox">
-        <label for="model">Model</label>
-        <select id="model" name="model">
-            <option value="b820ea11-02bf-4652-97ae-9ac0cc00593d">SD</option>
-            <option value="e5a291b6-3990-495a-b1fa-7bd1864510a6">Pixel</option>
-            <option value="5fdadebb-17ae-472c-bf76-877e657f97de">Creatures</option>
-            <option value="d69c8273-6b17-4a30-a13e-d6637ae1c644">3D</option>
-            <option value="ac614f96-1082-45bf-be9d-757f2d31c174">DreamShaper v7</option>
-            <option value="17e4edbf-690b-425d-a466-53c816f0de8a">Vintage</option>
-            <option value="4b2e0f95-f15e-48d8-ada3-c071d6104db8">Xmas stickers</option>
-            <option value="e316348f-7773-490e-adcd-46757c738eb7">Absolute Reality v1.6</option>
-        </select>
+    <div class="container">
+        <!-- Additional settings grouped under checkbox-container class -->
+        <div class="checkbox">
+            <label for="qual">Size</label>
+            <select id="qual" name="abc">
+                <option value=".5">Small</option>
+                <option value="1">Medium</option>
+                <option value="2">Large</option>
+                <option value="3">1536</option>
+            </select>
+        </div>
+        <div class="checkbox">
+            <label for="model">Model</label>
+            <select id="model" name="model">
+                <option value="b820ea11-02bf-4652-97ae-9ac0cc00593d">SD</option>
+                <option value="e5a291b6-3990-495a-b1fa-7bd1864510a6">Pixel</option>
+                <option value="5fdadebb-17ae-472c-bf76-877e657f97de">Creatures</option>
+                <option value="d69c8273-6b17-4a30-a13e-d6637ae1c644">3D</option>
+                <option value="ac614f96-1082-45bf-be9d-757f2d31c174">DreamShaper v7</option>
+                <option value="17e4edbf-690b-425d-a466-53c816f0de8a">Vintage</option>
+                <option value="4b2e0f95-f15e-48d8-ada3-c071d6104db8">Xmas stickers</option>
+                <option value="e316348f-7773-490e-adcd-46757c738eb7">Absolute Reality v1.6</option>
+            </select>
+        </div>
+        <div class="checkbox">
+            <label for="mag">Magic</label>
+            <select id="mag" name="magic">
+                <option value="false">false</option>
+                <option value="true">true</option>
+            </select>
+        </div>
+        <div class="checkbox">
+            <label for="til">Tiling</label>
+            <select id="til" name="tile">
+                <option value="false">false</option>
+                <option value="true">true</option>
+            </select>
+        </div>
     </div>
-    <div class="checkbox">
-        <label for="mag">Magic</label>
-        <select id="mag" name="magic">
-            <option value="false">false</option>
-            <option value="true">true</option>
-        </select>
+    <div id="right-container">
+        <!-- Canvas elements for rendering images -->
+        <canvas id="vCanvas1" class="visual-canvas"></canvas>
+        <canvas id="vCanvas2" class="visual-canvas"></canvas>
+        <canvas id="vCanvas3" class="visual-canvas"></canvas>
+        <canvas id="vCanvas4" class="visual-canvas"></canvas>
+        <canvas id="vCanvas5" class="visual-canvas"></canvas>
+        <canvas id="Canvas1" class="visual-canvas-large"></canvas>
+        <canvas id="Canvas2" class="visual-canvas-large"></canvas>
+        <canvas id="Canvas3" class="visual-canvas-large"></canvas>
+        <canvas id="Canvas4" class="visual-canvas-large"></canvas>
+        <canvas id="Canvas5" class="visual-canvas-large"></canvas>
     </div>
-    <div class="checkbox">
-        <label for="til">Tiling</label>
-        <select id="til" name="tile">
-            <option value="false">false</option>
-            <option value="true">true</option>
-        </select>
+    <!-- Link to instructions guide -->
+    <a href="https://aiartus.github.io/Instructions">Instructions Guide</a>
+    <div class="container">
+        <!-- User interface for interaction -->
+        <div class="prompt" contenteditable="true" id="prompt"></div>
+        <button id="generate-button">Generate</button>
+        <button id="copy-button">Copy</button>
+        <button id="url-button">Get Image</button>
     </div>
-</div>
-<div id="right-container">
-    <canvas id="vCanvas1" class="visual-canvas"></canvas>
-    <canvas id="vCanvas2" class="visual-canvas"></canvas>
-    <canvas id="vCanvas3" class="visual-canvas"></canvas>
-    <canvas id="vCanvas4" class="visual-canvas"></canvas>
-    <canvas id="vCanvas5" class="visual-canvas"></canvas>
-    <canvas id="Canvas1" class="visual-canvas-large"></canvas>
-    <canvas id="Canvas2" class="visual-canvas-large"></canvas>
-    <canvas id="Canvas3" class="visual-canvas-large"></canvas>
-    <canvas id="Canvas4" class="visual-canvas-large"></canvas>
-    <canvas id="Canvas5" class="visual-canvas-large"></canvas>
-</div>
-
-<a href="https://aiartus.github.io/Instructions">Instructions Guide</a>
-
-<div class="container">
-    <div class="prompt" contenteditable="true" id="prompt"></div>
-    <button id="generate-button">Generate</button>
-    <button id="copy-button">Copy</button>
-    <button id="url-button">Get Image</button>
-</div>
+</body>
+</html>
     <script>
 fetch('describing.txt')
     .then(response => response.text())
